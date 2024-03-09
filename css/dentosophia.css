@@ -31,13 +31,17 @@ background image
 
 /*
  * responsive google maps
+ * thanks to Amit Agarwal:
+ * https://www.labnol.org/internet/embed-responsive-google-maps/28333/
  */
 .google-maps {
   position: relative;
   padding-bottom: 75%; 
-
+  box-shadow: 5px 5px 20px rgb(73, 71, 41);
   height: 0;
   overflow: hidden;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 .google-maps iframe {
   position: absolute;
@@ -45,6 +49,13 @@ background image
   left: 0;
   width: 100% !important;
   height: 100% !important;
-  padding-left: 10%;
-  padding-right: 10%;
 }
+
+/*
+ * hide mobile number behind img
+ */
+ .responsive-img{
+  width: 100%;
+  max-width: 110px;
+  height: auto;
+ }
