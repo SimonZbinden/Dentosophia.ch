@@ -1,3 +1,7 @@
+/*
+credits: https://github.com/TinyJSDeveloper/bulma-css-burger
+*/
+
 /* Fix hamburger button position. */
 .navbar-burger-toggle + .navbar-burger {
   margin-top: -3.25em;

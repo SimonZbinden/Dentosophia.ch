@@ -1,5 +1,5 @@
 /*
-Fix to apply footer to bottom
+Easy fix to apply footer to bottom
 */
 body {
     min-height: 100vh;
@@ -19,7 +19,7 @@ background image
 }
 .hero-background {
   position: absolute;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
   width: 100%;
   height: 100%;
