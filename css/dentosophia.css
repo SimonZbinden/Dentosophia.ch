@@ -1,19 +1,7 @@
 /*
-Easy fix to apply footer to bottom
-*/
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-body > footer {
-    margin-top: auto;
-}
-
-/*
 background image
 */
-.hero.has-background {
+.hero-body.has-background {
   position: relative;
   overflow: hidden;
 }
@@ -28,6 +16,12 @@ background image
   opacity: 0.3;
 }
 
+/*
+ * customize nav bar
+ */
+ .navbar.is-warning {
+  background-color: rgba(255, 215, 0, 0.1);
+ }
 
 /*
  * responsive google maps
@@ -59,3 +53,10 @@ background image
   max-width: 110px;
   height: auto;
  }
+
+ /*
+  * hyperlinks
+  */
+.hyperlink{
+  color: #120aee;
+}
