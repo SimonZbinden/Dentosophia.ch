@@ -14,129 +14,148 @@
   </head>
 
   <body>
-    <!-- Navbar -->
-    <nav class="navbar is-warning has-shadow" role="navigation" aria-label="main navigation">
-      <div class="container">
-        
-        <!-- Brand: always visible-->
-        <div class="navbar-brand">
-          <a class="navbar-item" href="index.html">
-            <img class="py-2 px-2" style="max-height: 60px;" src="assets/logo_dentosophia_klein2.png" alt="Logo">
-          </a>
-        </div>
-        
-        <!--
-        #navbarMenu[navbar-toggle]
-        This is the navbar menu.
-        -->
-        <input type="checkbox" id="navbar-burger-toggle" class="navbar-burger-toggle is-hidden is-warning">
-        <label for="navbar-burger-toggle" class="navbar-burger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        
-        <!-- Menu. -->
-        <div class="navbar-menu">
-          <!-- start: on the left -->
-          <div class="navbar-start">
-            <a class="navbar-item" href="philosophie.html">Philosophie</a>
-            <a class="navbar-item" href="">Über mich</a>
-            <!-- DropDown Menu-->
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                Therapien
-              </a>
+    <section class="hero is-white is-fullheight">
+      <!-- Hero head: will stick at the top -->
+      <nav class="navbar is-warning has-shadow" role="navigation" aria-label="main navigation">
+        <div class="hero-head container">
           
-              <div class="navbar-dropdown">
-                <a class="navbar-item" href="dentosophie.html">
-                  Dentosophie
+          <!-- Brand: always visible-->
+          <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+              <img class="py-2 px-2" style="max-height: 60px;" src="assets/logo_dentosophia_klein2.png" alt="Logo">
+            </a>
+          </div>
+          
+          <!--
+          #navbarMenu[navbar-toggle]
+          This is the navbar menu.
+          -->
+          <input type="checkbox" id="navbar-burger-toggle" class="navbar-burger-toggle is-hidden is-warning">
+          <label for="navbar-burger-toggle" class="navbar-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          
+          <!-- Menu. -->
+          <div class="navbar-menu">
+            <!-- start: on the left -->
+            <div class="navbar-start">
+              <a class="navbar-item" href="philosophie.html">Philosophie</a>
+              <a class="navbar-item" href="">Über mich</a>
+              <!-- DropDown Menu-->
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Therapien
                 </a>
-                <a class="navbar-item">
-                  Kraniosakraltherapie
-                </a>
+            
+                <div class="navbar-dropdown">
+                  <a class="navbar-item" href="dentosophie.html">
+                    Dentosophie
+                  </a>
+                  <a class="navbar-item">
+                    Kraniosakraltherapie
+                  </a>
+                </div>
               </div>
             </div>
+            <!-- start: on the right -->
+            <div class="navbar-end">
+              <a class="navbar-item is-active" href="kontakt.html">Karte / Kontakt</a>
+            </div> 
           </div>
-          <!-- start: on the right -->
-          <div class="navbar-end">
-            <a class="navbar-item is-active" href="kontakt.html">Karte / Kontakt</a>
-          </div> 
         </div>
-      </div>
-    </nav>
+      </nav>  
 
-    <!-- Main content -->
-    <div class="hero is-fullheight-with-navbar has-background content">
-      <!-- Background --> 
-      <img alt="Hintergrundbild" class="hero-background is-transparent" src="assets/flower-of-life.svg" />
-      <div class="hero-body">
-        <div class="columns is-overlay is-vcentered">
-          <div class="column is-1"></div>
-          <!-- Contact Information -->
-          <div class="column is-4 px-6">
-            <h1 class="is-size-3-mobile is-size-2-desktop title">
-              Kontakt
-            </h1>
-            <p>
-              Pia Kammer <br>
-              Hohlgässli 367b <br>
-              3804 Habkern<br>
-              <br>
-
-            </p>
-            <img 
-              src="assets/natel.png" 
-              alt="Mobile Nr"
-              class="responsive-img">
-              <br><br>
-              
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body is-fullheight has-background">
+        <!-- Background --> 
+        <img alt="Hintergrundbild" class="hero-background is-transparent" src="assets/flower-of-life.svg" />
+        <!-- Content -->
+        <div class="tile is-ancestor">
+          <!-- left tile -->
+          <div class="tile is-parent is-vertical is-6 px-6">
+            <div class="tile is-child">
+              <h1 class="is-size-3-mobile is-size-2-desktop title">
+                Kontakt
+              </h1>
+              <h4>
+                Pia Kammer <br>
+                Hohlgässli 367b <br>
+                3804 Habkern<br>
+              </h4>
+              <img 
+                src="assets/natel.png" 
+                alt="Mobile Nr"
+                class="responsive-img mt-4 mb-1">
+                <br>
               <a 
               href="mailto:piapia%40gmx.ch?subject=Dentosophie&amp;body=Liebe%20Pia%20Kammer" 
-              class="hyperlink py-2">E-mail</a>            
+              class="button is-link is-light py-2">E-mail</a>
+              <br>
+            </div>
+            
+            <div class="tile is-child">
+              <h1 class="is-size-3-mobile is-size-2-desktop title py-4">
+                Anfahrt
+              </h1>
+              <h2 class="subtitle mb-0">
+                Öffentliche Verkehrsmittel:
+              </h2>
+              <h4>
+                Postauto Nr 106 von <strong>Interlaken West</strong> nach <strong>Habkern Post</strong>.
+              </h4>
+              <a
+              href="https://www.öv-info.ch/sites/default/files/fap/2024/pdf/31.106.pdf"
+              target="_blank"
+              class="button is-warning">Fahrplan</a>
+              <h2 class="subtitle mb-0 mt-4">
+                Auto:
+              </h2>            
+              <h4>
+                Parkplatz vorhanden (Bitte anfragen für Wegbeschreibung).
+              </h4>
+            </div>
           </div>
-          <!-- Google Maps -->
-          <div class="column is-6">
+          <!-- right tile -->
+          <div class="tile is-6 is-vertical">
             <div class="google-maps">
-                <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1367.4645002772993!2d7.863755492785964!3d46.7268618799276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478fbb5cd2dbf01b%3A0x5add102353264873!2sHohlg%C3%A4ssli%20367%2C%203804%20Habkern!5e0!3m2!1sde!2sch!4v1709938323894!5m2!1sde!2sch"
-                width="600"
-                  height="450"
-                  allowfullscreen=""
-                  loading="lazy"
-                ></iframe>
-              </div>
+              <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1367.4645002772993!2d7.863755492785964!3d46.7268618799276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478fbb5cd2dbf01b%3A0x5add102353264873!2sHohlg%C3%A4ssli%20367%2C%203804%20Habkern!5e0!3m2!1sde!2sch!4v1709938323894!5m2!1sde!2sch"
+              width="600"
+                height="450"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
-          <div class="column is-1 is-transparent"></div>
-        </div>
-
+        </div>      
       </div>
-    </div>
-
-    <!-- Footer. -->
-    <footer class="footer">
-      <!-- SEO -->
-      <div class="has-text-centered">
-        <p>
-          <strong>Dentosophie</strong> und <strong>Craniosacral-Therapie</strong>
-          in <strong>Habkern</strong> bei <strong>Interlaken</strong> im wunderschönen <strong>Berner Oberland / Schweiz</strong>
-          durch <strong>Pia Kammer</strong>.
-        </p>
+    
+      <!-- Hero footer: will stick at the bottom -->
+      <div class="hero-foot">
+        <footer class="footer ">
+          <div class="tile is-ancestor is-vcentered ml-6">
+            <!-- SEO -->
+            <div class="tile is-4">
+              <h4>
+                <strong>Wegbegleitung</strong>, <strong>Dentosophie</strong> und <strong>Craniosacral-Therapie</strong>
+                in <strong>Habkern</strong> bei <strong>Interlaken</strong> im wunderschönen <strong>Berner Oberland / Schweiz</strong>
+                durch <strong>Pia Kammer</strong>.
+              </h4>
+            </div>
+            <div class="tile is-4"><br></div>
+            <div class="tile is-4 is-vertical">
+              <a
+              href="impressum.html"
+              class="hyperlink">Impressum</a><br>
+              <a
+              href="dsb.html"
+              class="hyperlink">Datenschutzbestimmungen</a>
+            </div>
+          </div>
+        </footer>
       </div>
-      <!-- Impressum and Stuff -->
-      <div class="columns">
-        <div class="column">
-          <h4 class="bd-footer-title has-text-centered">
-            <p>Impressum</p>
-          </h4>
-        </div>
-
-        <div class="column">
-          <h4 class="bd-footer-title has-text-centered">
-            <p>Datenschutzbestimmungen</p>
-          </h4>
-        </div>
-      </div>
-    </footer>
+    </section>
   </body>
 </html>

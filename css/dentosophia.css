@@ -24,6 +24,13 @@ background image
  }
 
 /*
+ * customize footer
+ */
+ .footer {
+  background-color: rgba(255, 215, 0, 0.1);
+ }
+
+/*
  * responsive google maps
  * thanks to Amit Agarwal:
  * https://www.labnol.org/internet/embed-responsive-google-maps/28333/
@@ -59,4 +66,12 @@ background image
   */
 .hyperlink{
   color: #120aee;
+}
+
+/*
+ * justified text
+ */
+.text-is-justified{
+  text-align: justify;
+  text-justify: auto;
 }
