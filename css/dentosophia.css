@@ -82,4 +82,5 @@ background image
 .text-is-justified{
   text-align: justify;
   text-justify: auto;
+  hyphens: auto;
 }

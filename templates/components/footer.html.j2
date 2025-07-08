@@ -1,0 +1,26 @@
+<!-- Hero footer: will stick at the bottom -->
+<div class="hero-foot">
+    <footer class="footer">
+        <div class="tile is-ancestor is-vcentered ml-6">
+        <!-- SEO Section -->
+        <div class="tile is-4">
+            <h4>
+            {% for job in jobs %}
+                <strong>{{ job }}</strong>{% if not loop.last %}, {% else %} und {% endif %}
+            {% endfor %}
+            in <strong>{{ city }}</strong> {% if nearby_city %} bei <strong>{{ nearby_city }}</strong> {% endif %} im wunderschönen 
+            <strong>{{ canton }} / {{ country }}</strong> durch <strong>{{ first_name }} {{ last_name }}</strong>.
+        </h4>
+      </div>
+      
+      <!-- Spacer -->
+      <div class="tile is-4"><br></div>
+      
+      <!-- Links -->
+      <div class="tile is-4 is-vertical">
+        <a href="{{ url_for('impressum') }}" class="hyperlink">Impressum</a><br>
+        <a href="{{ url_for('dsb') }}" class="hyperlink">Datenschutzbestimmungen</a>
+      </div>
+    </div>
+  </footer>
+</div>
