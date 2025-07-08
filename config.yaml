@@ -4,4 +4,7 @@ footer:
   city_nearby: "Interlaken"
   first_name: "Pia"
   last_name: "Kammer"
-  
+
+url:
+  impressum: "/output/impressum.html"
+  dsb: "/output/dsb.html"

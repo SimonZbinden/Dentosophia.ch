@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}My Site{% endblock %}</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    {% include "components/header.html.j2" %}
 </head>
 <body>
     {% include "components/navbar.j2" %}
