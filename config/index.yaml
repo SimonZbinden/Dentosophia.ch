@@ -1,0 +1,16 @@
+pages:
+  index:
+    background_img:
+      alt: "Hintergrundbild"
+      class: "hero-background is-transparent"
+      dir: "../assets"
+      file: "flower-of-life.svg"
+    contents:
+      title: "Platzhalter"
+      subtitle: "Dieser Text ist supi"
+      content: "Hier könnte Ihre Werbung stehen."
+
+urls:
+  dir: "../html"
+  impressum: "impressum.html"
+  dsb: "dsb.html"

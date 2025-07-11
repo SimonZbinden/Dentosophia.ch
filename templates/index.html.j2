@@ -1,14 +1,20 @@
 {% extends "base.html.j2" %}
 
+{% set page_config = pages.index %}
+
 {% block title %}Your Page Title - Index{% endblock %}
 
 {% block content %}
     <!-- Hero content: will be in the middle -->
     <div class="hero-body is-fullheight has-background">
       <!-- Background image --> 
-      <img 
-        alt="Hintergrundbild" class="hero-background is-transparent" src="{{ static_url(dir='../assets', file='flower-of-life.svg') }}" />
-
+      {% if page_config.background_img is defined -%}
+      <img
+        alt="{{ page_config.background_img.alt }}"
+        class="{{ page_config.background_img.class }}"
+        src="{{ static_url(dir=page_config.background_img.dir, file=page_config.background_img.file) }}"
+      />
+      {% endif %}
       <!-- Content: shares background above -->
       <div class="container">
         <h1 class="title">
