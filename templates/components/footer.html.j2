@@ -5,11 +5,11 @@
         <!-- SEO Section -->
         <div class="tile is-4">
             <h4>
-            {% for job in footer.jobs %}
-                <strong>{{ job }}</strong>{% if not loop.last %}, {% else %} und {% endif %}
-            {% endfor %}
-            in <strong>{{ city }}</strong> {% if nearby_city %} bei <strong>{{ nearby_city }}</strong> {% endif %} im wunderschönen 
-            <strong>{{ canton }} / {{ country }}</strong> durch <strong>{{ first_name }} {{ last_name }}</strong>.
+            {% for job in footer.jobs -%}
+                <strong>{{ job }}</strong>{% if loop.revindex0 == 1 %} und {% elif not loop.last %}, {% endif %}
+            {%- endfor %}
+            in <strong>{{ footer.city }}</strong> {% if footer.city_nearby is defined %} bei <strong>{{ footer.city_nearby }}</strong> {% endif %} im wunderschönen <strong>{{ footer.canton }} / {{ footer.country }}</strong> 
+            durch <strong>{{ footer.first_name }} {{ footer.last_name }}</strong>.
         </h4>
       </div>
       
@@ -18,8 +18,8 @@
       
       <!-- Links -->
       <div class="tile is-4 is-vertical">
-        <a href="{{ static_url('html/', 'impressum.html') }}" class="hyperlink">Impressum</a><br>
-        <a href="{{ static_url('html/', 'dsb.html') }}" class="hyperlink">Datenschutzbestimmungen</a>
+        <a href="{{ static_url(dir='html', file='impressum.html') }}" class="hyperlink">Impressum</a><br>
+        <a href="{{ static_url(dir='html', file='dsb.html') }}" class="hyperlink">Datenschutzbestimmungen</a>
       </div>
     </div>
   </footer>

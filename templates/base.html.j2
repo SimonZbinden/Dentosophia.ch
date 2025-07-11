@@ -7,12 +7,16 @@ Copyright (c) {{ current_year() }}, Zbinden Simon Michael
 -->
 <!DOCTYPE html>
 <html>
-<head>
-    {% include "components/header.html.j2" %}
-</head>
-<body>
-    {% include "components/navbar.html.j2" %}
-    {% block content %}{% endblock %}
-    {% include "components/footer.html.j2" %}
-</body>
+  <head>
+      {% include "components/header.html.j2" %}
+  </head>
+
+  <body>
+    <section class="hero is-white is-fullheight">
+      {% include "components/navbar.html.j2" %}
+      {% block content %}{% endblock %}
+      {% include "components/footer.html.j2" %}
+    </section>
+    
+  </body>
 </html>
