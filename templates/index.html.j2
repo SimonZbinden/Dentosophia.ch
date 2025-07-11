@@ -1,0 +1,30 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Your Page Title - Index{% endblock %}
+
+{% block content %}
+  <section class="hero is-white is-fullheight">
+    {# Hero Background & Content #}
+    <div class="hero-body is-fullheight has-background">
+      {# Background Image #}
+      <img 
+        alt="Hintergrundbild" 
+        class="hero-background is-transparent" 
+        src="{{ static_url('assets', filename='flower-of-life.svg') }}" 
+      />
+
+      {# Main Content #}
+      <div class="container">
+        <h1 class="title">
+          Platzhalter
+        </h1>
+        <h2 class="subtitle">
+          Dieser Text ist supi
+        </h2>
+        <h4>
+          Hier könnte Ihre Werbung stehen.
+        </h4>
+      </div>
+    </div>
+  </section>
+{% endblock %}

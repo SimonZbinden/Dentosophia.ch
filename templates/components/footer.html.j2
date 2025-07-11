@@ -5,7 +5,7 @@
         <!-- SEO Section -->
         <div class="tile is-4">
             <h4>
-            {% for job in jobs %}
+            {% for job in footer.jobs %}
                 <strong>{{ job }}</strong>{% if not loop.last %}, {% else %} und {% endif %}
             {% endfor %}
             in <strong>{{ city }}</strong> {% if nearby_city %} bei <strong>{{ nearby_city }}</strong> {% endif %} im wunderschönen 
@@ -18,8 +18,8 @@
       
       <!-- Links -->
       <div class="tile is-4 is-vertical">
-        <a href="{{ url_for('impressum') }}" class="hyperlink">Impressum</a><br>
-        <a href="{{ url_for('dsb') }}" class="hyperlink">Datenschutzbestimmungen</a>
+        <a href="{{ static_url('html/', 'impressum.html') }}" class="hyperlink">Impressum</a><br>
+        <a href="{{ static_url('html/', 'dsb.html') }}" class="hyperlink">Datenschutzbestimmungen</a>
       </div>
     </div>
   </footer>
