@@ -1,16 +1,15 @@
-pages:
-  index:
-    background_img:
-      alt: "Hintergrundbild"
-      class: "hero-background is-transparent"
-      dir: "../assets"
-      file: "flower-of-life.svg"
-    contents:
-      title: "Platzhalter"
-      subtitle: "Dieser Text ist supi"
-      content: "Hier könnte Ihre Werbung stehen."
+content_class: "hero-body is-fullheight has-background"
 
-urls:
-  dir: "../html"
-  impressum: "impressum.html"
-  dsb: "dsb.html"
+background_img:
+  alt: "Hintergrundbild"
+  class: "hero-background is-transparent"
+  dir: "../assets"
+  file: "flower-of-life.svg"
+
+h1_title: "Platzhalter"
+
+body:
+  - subtitle: "Dieser Text ist supi"    # List item 1 (full content block)
+    text: "Hier könnte Ihre Werbung stehen."
+  - subtitle: "Und hier auch"           # List item 2
+    text: "zweiter Test."

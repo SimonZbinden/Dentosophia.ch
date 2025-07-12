@@ -1,31 +1,35 @@
 {% extends "base.html.j2" %}
 
-{% set page_config = pages.index %}
-
 {% block title %}Your Page Title - Index{% endblock %}
 
 {% block content %}
     <!-- Hero content: will be in the middle -->
-    <div class="hero-body is-fullheight has-background">
+    <div {% if content_class is defined %} class="{{ content_class }}" {% endif %}>
       <!-- Background image --> 
-      {% if page_config.background_img is defined -%}
+      {% if background_img is defined -%}
       <img
-        alt="{{ page_config.background_img.alt }}"
-        class="{{ page_config.background_img.class }}"
-        src="{{ static_url(dir=page_config.background_img.dir, file=page_config.background_img.file) }}"
+        alt="{{ background_img.alt }}"
+        class="{{ background_img.class }}"
+        src="{{ static_url(dir=background_img.dir, file=background_img.file) }}"
       />
       {% endif %}
       <!-- Content: shares background above -->
-      <div class="container">
-        <h1 class="title">
-          Platzhalter
-        </h1>
-        <h2 class="subtitle">
-          Dieser Text ist supi
-        </h2>
-        <h4>
-          Hier könnte Ihre Werbung stehen.
-        </h4>
+      <div class="content-block">
+      <!-- h1 Title - only one per side for SEO -->
+      {% if h1_title is defined -%}
+      <h1 class="title">
+        {{ h1_title }}
+      </h1>
+      {%- endif %}
+
+      {%- for item in body -%}
+          {% if item.subtitle %}
+            <h2 class="subtitle">{{ item.subtitle }}</h2>
+          {% endif %}
+          {% if item.text %}
+            <p>{{ item.text }}</p>
+          {% endif %}
+      {% endfor %}
       </div>
     </div>
 {% endblock %}
