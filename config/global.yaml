@@ -12,3 +12,12 @@ links:
   impressum: "impressum.html"
   dsb: "dsb.html"
   index: "index.html"
+
+background_img:
+  alt: "Hintergrundbild"
+  class: "hero-background is-transparent"
+  dir: "../assets"
+  file: "flower-of-life.svg"
+
+current_page: "none"
+content_class: "hero-body is-fullheight has-background"

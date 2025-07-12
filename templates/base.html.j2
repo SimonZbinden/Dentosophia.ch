@@ -13,8 +13,13 @@ Copyright (c) {{ current_year() }}, Zbinden Simon Michael
 
   <body>
     <section class="hero is-white is-fullheight">
+      <!-- Hero head: will stick at the top -->
       {% include "components/navbar.html.j2" %}
+
+      <!-- Hero content: will be in the middle -->
       {% block content %}{% endblock %}
+
+      <!-- Hero footer: will stick at the bottom -->
       {% include "components/footer.html.j2" %}
     </section>
     

@@ -1,0 +1,20 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Impressum | {{ site_name }}{% endblock %}
+
+{% block content %}
+    {% include "components/content_multi-col.html.j2" %}
+{% endblock %}
+
+{# 
+Custom background for Impressum
+  {% with background_img = {
+       'file': 'legal-bg.svg',
+       'alt': 'Legal background pattern',
+       'class': 'hero-background is-dark'
+     },
+     container_class = 'legal-section'
+  %}
+    {% include "components/content_block.html.j2" %}
+  {% endwith %}
+#}

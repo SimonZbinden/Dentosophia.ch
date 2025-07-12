@@ -7,7 +7,10 @@ configs_path = Path("config/")
 configs = python_modules.load_configs(configs_path)
 
 ### SELECT TEMPLATES ###
-templates = ["index"]
+templates = [
+    "index",
+    "impressum",
+    ]
 
 ### SET OUTPUT DIRECTORY ###
 output_dir = Path('html/')

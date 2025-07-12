@@ -1,11 +1,4 @@
-content_class: "hero-body is-fullheight has-background"
-
-background_img:
-  alt: "Hintergrundbild"
-  class: "hero-background is-transparent"
-  dir: "../assets"
-  file: "flower-of-life.svg"
-
+current_page: "index"
 h1_title: "Platzhalter"
 
 body:

@@ -1,4 +1,3 @@
-<!-- Hero footer: will stick at the bottom -->
 <div class="hero-foot">
     <footer class="footer">
         <div class="tile is-ancestor is-vcentered ml-6">
@@ -18,8 +17,15 @@
       
       <!-- Links -->
       <div class="tile is-4 is-vertical">
-        <a href="{{ static_url(dir=links.dir, file=links.impressum) }}" class="hyperlink">Impressum</a><br>
-        <a href="{{ static_url(dir=links.dir, file=links.dsb) }}" class="hyperlink">Datenschutzbestimmungen</a>
+        <a 
+        href="{{ static_url(dir=links.dir, file=links.impressum) }}" 
+        class="hyperlink"
+        {% if current_page=='impressum' %} style="color: blue;"><strong {% endif %}>Impressum{% if current_page=='impressum' %}</strong>{% endif %}</a>
+        <br>
+        <a 
+        href="{{ static_url(dir=links.dir, file=links.dsb) }}" 
+        class="hyperlink"
+        {% if current_page=='dsb' %} style="color: blue;"><strong {% endif %}>Datenschutzbestimmungen{% if current_page=='dsb' %}</strong>{% endif %}</a>
       </div>
     </div>
   </footer>
