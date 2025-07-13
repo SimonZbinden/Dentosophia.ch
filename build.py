@@ -22,4 +22,5 @@ templates = [
 output_dir = Path('html/')
 
 ### RENDER HTML ###
-render.render_html(output_dir, configs, templates)
+if __name__ == "main":
+    render.render_html(output_dir, configs, templates)
