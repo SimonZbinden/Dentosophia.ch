@@ -1,0 +1,79 @@
+{% extends "base.html.j2" %}
+
+{%- import "components/macros.html.j2" as macros -%}
+
+{% block content %}
+      <div class="hero-body is-fullheight has-background">
+        <!-- Background image --> 
+        {%- if background_img is defined -%}
+        {{ macros.background_image(background_img) }}
+        {%- endif -%}
+        <!-- Content: shares background above -->
+        <div class="container mx-6">
+          <!-- Title -->
+          <div class="mb-6">
+            <h1 class="title is-size-3-mobile is-size-2-desktop">
+              {{ h1_title }}
+            </h1>
+            <p>
+              {{ h1_subtitle }}
+            </p>
+          </div>
+          <!-- Sub -->
+          <div class="tile is-ancestor">
+            <!-- Allgemeines DSG -->
+            <div class="tile is-parent is-vertical is-4">
+                <h2 class="subtitle">
+                  Allgemeines
+                </h2>
+                <h4 class="text-is-justified">
+                  Gestützt auf Artikel 13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes 
+                  (Datenschutzgesetz, DSG) hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz vor Missbrauch ihrer persönlichen Daten. 
+                  <br>
+                  Diese Seite sammelt keine Daten; auch nicht in anonymisierter Form.
+                  Sollte dies wider bestem Wissen und Gewissen doch der Fall sein, weil irgendwo versteckt versehentlich ein Häckchen gesetzt wurde, so sei der Besucher beruhig:
+                  Diese Daten werden durch den Inhaber dieser Website weder ausgewertet, noch an Dritte weitergegeben oder verkauft.
+                  
+                </h4>
+            </div>
+            <!-- Cookies -->
+            <div class="tile is-parent is-vertical is-4">
+              <h2 class="subtitle">
+                Cookies
+              </h2>
+              <h4 class="text-is-justified">
+                Cookies gibt es bei mir auf Anfrage zu Kaffee oder Tee. <br>
+                Diese Website setzt keine Cookies und spioniert auch nicht die Besucher nach deren Dritt-Cookies aus, wie es die allermeisten anderen Websites so machen
+                (freundliche Erinnerung, einmal wieder alle Cookies zu löschen; was wir ja regelmässig tun sollten...).
+              </h4>
+            </div>
+            <!-- Host -->
+            <div class="tile is-parent is-vertical is-4">
+              <h2 class="subtitle">
+                Sonstiges
+              </h2>
+              <h4 class="text-is-justified">
+                Auch hier gilt wieder der gesunde Menschenverstand.
+                Die Inhaberin dieser Website hat kein Interesse an Daten in irgendeiner Form.
+                Nicht einmal ein Besucherzähler ist implementiert.
+                <br>
+                Doch ist es für die Inhaberin nicht möglich zu wissen, welche Daten Internetprovider, Hostingservices, etc. sammeln und analysieren.
+                Wo immer möglich wird mit Schwezer Firmen mit Schweizer DSG zusammengearbeitet und ein diesen das sammeln, verarbeiten und/oder verkaufen der Daten untersagt.
+                <br>
+                Sollte dem Besucher dieser Website eine dieser Erklärung diametral entgegenstehende Tatsache ersichtlich werden,
+                so wird dieser herzlich darum gebeten, dies der Inhaberin dieser Website kund zu tun unter:
+                <br><br>
+                {{ personal.email.dsb }}
+                <br><br>
+                Nach bekanntwerden etwaiger Missstände würden in diesem Fall umgehend Schritte eingeleitet, um die Privatssphäre der Besucher bestmöglichst sicherzustellen.
+                Privatssphäre ist der Inhaberin dieses Auftrits wirklich, wirklich wichtig.
+                Aber sie kann auch nur soviel tun, wie sie es ihre bescheidenen Werkzeuge erlauben.
+                <br>
+                Ernsthaft: Wer liest dies hier alles und sucht nach Möglichkeiten, um die Inhaberin dieser Website irgendwie rechtlich belangen zu können?
+                Armer Mensch... Er solle sich doch für eine Therapiesitzung anmelden. Wäre wohl dringenst nötig!
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock content %}

@@ -1,7 +1,30 @@
 {% extends "base.html.j2" %}
 
-{% block title %}Index|default("Home"){% endblock %}
+{%- import "components/macros.html.j2" as macros -%}
 
 {% block content %}
-  {% include "components/content_single-col.html.j2" %}
+<div {% if content_class is defined %} class="{{ content_class }}" {% endif %}>
+    <!-- Background image --> 
+    {%- if background_img is defined -%}
+    {{ macros.background_image(background_img) }}
+    {%- endif -%}
+    <!-- Content: shares background above -->
+    <div class="content-block">
+        <!-- h1 Title - only one per side for SEO -->
+        {% if h1_title is defined -%}
+        <h1 class="title">
+        {{ h1_title }}
+        </h1>
+        {%- endif %}
+
+        {%- for item in body -%}
+        {% if item.subtitle %}
+        <h2 class="subtitle">{{ item.subtitle }}</h2>
+        {% endif %}
+        {% if item.text %}
+        <p>{{ item.text }}</p>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

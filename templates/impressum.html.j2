@@ -1,9 +1,83 @@
 {% extends "base.html.j2" %}
 
-{% block title %}Impressum | {{ site_name }}{% endblock %}
+{%- import "components/macros.html.j2" as macros -%}
 
 {% block content %}
-    {% include "components/content_multi-col.html.j2" %}
+      <div class="hero-body is-fullheight has-background">
+        <!-- Background image --> 
+        {%- if background_img is defined -%}
+        {{ macros.background_image(background_img) }}
+        {%- endif -%}
+        <!-- Content: shares background above -->
+        <div class="container mx-6">
+          <!-- Title -->
+          <div class="mb-6">
+            <h1 class="title is-size-3-mobile is-size-2-desktop">
+              Impressum
+            </h1>
+            <p>
+              dentosophia.ch
+            </p>
+          </div>
+          <!-- Sub -->
+          <div class="tile is-ancestor mt-6">
+            <!-- Kontakadresse -->
+            <div class="tile is-parent is-vertical is-4">
+                <h2 class="subtitle">
+                  Kontaktadresse
+                </h2>
+                <p>
+                  {{ personal.last_name }} {{ personal.first_name }} <br>
+                  {{ personal.adress }} <br>
+                  {{ personal.zip }} {{ personal.city }}<br>
+                  <br>
+                  {{ personal.email.impressum }}
+                </p>
+            </div>
+            <!-- Haftungsausschluss -->
+            <div class="tile is-parent is-vertical is-4">
+              <h2 class="subtitle">
+                Haftungsausschluss
+              </h2>
+              <p class="text-is-justified">
+                Es gilt der gesunde Menschenverstand. 
+                Darunter ist u.a. (aber keinesfalls abschliessend) zu verstehen:
+                Die Inhaberin dieser Seite ist nicht haftbar für externe Inhalte, da sie auf diese, logischerweise, keinen Einfluss hat.
+                Selbstverständlich wurden Links, die von dieser Seite wegführen, mindestens bei deren Ersteinführung nach bestem Wissen und Gewissen überprüft.
+                Aber wir leben nun mal in einer Welt, in der jeder mit seiner Website machen kann, was er gerade will (und dafür, irgend wann einmal, die Konsequenzen zu tragen hat).
+                Wenn also solch ein Globi zu einem späteren Zeitpunkt den Inhalt seiner Website mit Schad-Software anreichert und deine Schutzvorkehrungen dich nicht gänzlich davir schützen, dann tut mir dies natürlich leid für dich, aber den Schaden musst du in solch einem Fall beim Globi einfordern.
+                Ebenso bin ich nicht verpflichtet, übermittelte oder gespeicherte Indormationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                Wie kommt jemand darauf, dass das anders sein könnte?
+                Muss dieser Quark, der eh niemand liest, wirklich hier stehen?
+                Sind wir derart verblödet?
+                Natürlich übernehme ich auch keinerlei Gewähr hinsichtlich Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit, Vollständigkeit und was sonst noch alles über Informationen auf dieser Website.
+                Ich bin doch nicht doof. Auf sowas warten gewisse Geier doch nur.
+                Da gibt man sich Zeit seines Lebens beste Mühe und macht halt, weil man Mensch ist, hier und dort mal ganz unbewusst versehentlich einen Fehler.
+                Und für solche Missgeschicke stehe ich nicht vor einem weltlichen Gericht gerade.
+                Muss ich auch noch angeben, dass ich für eventuelle Schäden aufgrund technischer Störungen ebenfalls nicht verantwortlich bin? Schonmal was von Schicksal gehört? Vielleicht sollte es gerade so sein und es hat, wahrscheinlich oder nur vielleicht, mehr mit dem Opfer denn mit mir zu tun.
+                Wie gesagt: all diese Dinge und noch viel mehr, was auf allen solchen Websiten irgendwo versteckt geschrieben steht und als Haftungauschluss gilt, gilt auch hier.
+              </p>
+            </div>
+            <!-- Urheberrechte -->
+            <div class="tile is-parent is-vertical is-4">
+              <h2 class="subtitle">
+                Urheberrechte
+              </h2>
+              <p class="text-is-justified">
+                Urheberrechte an Inhalten, Bildern, Fotos, Dateien und was man sonst noch so alles hier findet gehören ausschliesslich Pia Kammer oder den speziell gekennzeichneten Rechteinhabern.
+                Speziell gekennzeichnet ist hier wörtlich gemeint, denn manchmal habe ich den Hinweis dazu im Quellcode hinterlegt.
+                Dieser ist öffentlich zugänglich und für jederman einsehbar. Guckst du dort.
+                <br>
+                Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung des Urheberrechtsträgers einzuholen.
+                Ich mache kein Büro auf wenn zB Kopien dieser Website für rein private, nicht kommerzielle Zwecke verwendet werden.
+                <br>
+                Falls auf diesem Internetauftritt versehentlich eine Urheberrechtsverletzung begangen wurde (oder auch nur der Verdacht besteht), so wird um entsprechenden Hinweis via Email gebeten.
+                Selbstverständlich würden bei bekanntwerden solche Inhalte unverzüglich entfernt.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 {% endblock %}
 
 {# 

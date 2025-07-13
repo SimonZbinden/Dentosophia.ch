@@ -10,6 +10,12 @@ configs = python_modules.load_configs(configs_path)
 templates = [
     "index",
     "impressum",
+    "dsb",
+    "about",
+    "kontakt",
+    "philosophie",
+    "dentosophie",
+    "cranio",
     ]
 
 ### SET OUTPUT DIRECTORY ###

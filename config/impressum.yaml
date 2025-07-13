@@ -1,24 +1,7 @@
 current_page: "impressum"
-h1_title: "Impressum"
 
-body:
-  - subtitle: "Haftungsausschluss"
-    text: >
-      <p class="text-is-justified">
-      Es gilt der gesunde Menschenverstand. 
-      Darunter ist u.a. (aber keinesfalls abschliessend) zu verstehen:
-      Die Inhaberin dieser Seite ist nicht haftbar für externe Inhalte, da sie auf diese, logischerweise, keinen Einfluss hat.
-      Selbstverständlich wurden Links, die von dieser Seite wegführen, mindestens bei deren Ersteinführung nach bestem Wissen und Gewissen überprüft.
-      Aber wir leben nun mal in einer Welt, in der jeder mit seiner Website machen kann, was er gerade will (und dafür, irgend wann einmal, die Konsequenzen zu tragen hat).
-      Wenn also solch ein Globi zu einem späteren Zeitpunkt den Inhalt seiner Website mit Schad-Software anreichert und deine Schutzvorkehrungen dich nicht gänzlich davor schützen, dann tut mir dies natürlich leid für dich, aber den Schaden musst du in solch einem Fall beim Globi einfordern.
-      Ebenso bin ich nicht verpflochtet, übermittelte oder gespeicherte Indormationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-      Wie kommt jemand darauf, dass das anders sein könnte?
-      Muss dieser Quark, der eh niemand liest, wirklich hier stehen?
-      Sind wir derart verblödet?
-      Natürlich übernehme ich auch keinerlei Gewähr hinsichtlich Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit, Vollständigkeit und was sonst noch alles über Informationen auf dieser Website.
-      Ich bin doch nicht doof. Auf sowas warten gewisse Geier doch nur.
-      Da gibt man sich Zeit seines Lebens beste Mühe und macht halt, weil man Mensch ist, hier und dort mal ganz unbewusst versehentlich einen Fehler.
-      Und für solche Missgeschicke stehe ich nicht vor einem weltlichen Gericht gerade.
-      Muss ich auch noch angeben, dass ich für eventuelle Schäden aufgrund technischer Störungen ebenfalls nicht verantwortlich bin? Schonmal was von Schicksal gehört? Vielleicht sollte es gerade so sein und es hat, wahrscheinlich oder nur vielleicht, mehr mit dem Opfer denn mit mir zu tun.
-      Wie gesagt: all diese Dinge und noch viel mehr, was auf allen solchen Websiten irgendwo versteckt geschrieben steht und als Haftungauschluss gilt, gilt auch hier.
-      </p>
+h1_title: "Impressum"
+h1_subtitle: "dentosophia.ch"
+
+personal:
+  email: "impressum@dentosophia.ch"
