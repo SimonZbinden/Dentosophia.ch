@@ -30,5 +30,6 @@ website:
     prename: "Simon Michael"
     email: "none"
 
-current_page: "none"
-content_class: "hero-body is-fullheight has-background"
+this_site:
+  name: "none"
+  content_class: "hero-body is-fullheight has-background"

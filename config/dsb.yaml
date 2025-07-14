@@ -1,4 +1,5 @@
-current_page: "dsb"
+this_site:
+  name: "dsb"
 
 h1_title: "Datenschutzbestimmungen"
 h1_subtitle: "dentosophia.ch"

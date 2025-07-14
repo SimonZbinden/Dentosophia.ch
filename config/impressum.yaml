@@ -1,4 +1,5 @@
-current_page: "impressum"
+this_site:
+  name: "impressum"
 
 h1_title: "Impressum"
 h1_subtitle: "dentosophia.ch"

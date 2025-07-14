@@ -20,12 +20,12 @@
         <a 
         href="{{ static_url(dir=links.dir, file=links.impressum) }}" 
         class="hyperlink"
-        {% if current_page=='impressum' %} style="color: blue;"><strong {% endif %}>Impressum{% if current_page=='impressum' %}</strong>{% endif %}</a>
+        {% if this_site.name=='impressum' %} style="color: blue;"><strong {% endif %}>Impressum{% if current_page=='impressum' %}</strong>{% endif %}</a>
         <br>
         <a 
         href="{{ static_url(dir=links.dir, file=links.dsb) }}" 
         class="hyperlink"
-        {% if current_page=='dsb' %} style="color: blue;"><strong {% endif %}>Datenschutzbestimmungen{% if current_page=='dsb' %}</strong>{% endif %}</a>
+        {% if this_site.name=='dsb' %} style="color: blue;"><strong {% endif %}>Datenschutzbestimmungen{% if current_page=='dsb' %}</strong>{% endif %}</a>
       </div>
     </div>
   </footer>

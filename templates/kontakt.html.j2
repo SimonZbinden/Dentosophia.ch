@@ -1,14 +1,6 @@
 {% extends "base.html.j2" %}
 
-{%- import "components/macros.html.j2" as macros -%}
-
 {% block content %}
-      <div class="hero-body is-fullheight has-background">
-        <!-- Background image --> 
-        {%- if background_img is defined -%}
-        {{ macros.background_image(background_img) }}
-        {%- endif -%}
-        <!-- Content: shares background above -->
         <div class="tile is-ancestor">
           <!-- left tile -->
           <div class="tile is-parent is-vertical is-6 px-6">
@@ -69,5 +61,4 @@
             </div>
           </div>
         </div>      
-      </div>
 {% endblock content %}

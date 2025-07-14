@@ -1,4 +1,6 @@
-current_page: "index"
+this_site:
+  name: "index"
+  
 h1_title: "Platzhalter"
 
 body:

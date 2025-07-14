@@ -1,14 +1,6 @@
 {% extends "base.html.j2" %}
 
-{%- import "components/macros.html.j2" as macros -%}
-
 {% block content %}
-<div {% if content_class is defined %} class="{{ content_class }}" {% endif %}>
-    <!-- Background image --> 
-    {%- if background_img is defined -%}
-    {{ macros.background_image(background_img) }}
-    {%- endif -%}
-    <!-- Content: shares background above -->
     <div class="content-block">
         <!-- h1 Title - only one per side for SEO -->
         {% if h1_title is defined -%}
@@ -26,5 +18,4 @@
         {% endif %}
         {% endfor %}
     </div>
-</div>
 {% endblock %}
