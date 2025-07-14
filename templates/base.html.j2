@@ -19,11 +19,11 @@ Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.deve
 
       <!-- Hero content: will be in the middle -->
       <div class="{{ this_site.content_class }}">
+      {% if background_img is defined -%}
       <!-- Background image --> 
-      {%- if background_img is defined -%}
       {{ macros.background_image(background_img) }}
-      {%- endif -%}
       <!-- Content: shares background above -->
+      {%- endif -%}
       {% block content %}No content found!{% endblock %}
       </div>
 
