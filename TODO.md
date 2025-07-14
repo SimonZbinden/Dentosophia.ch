@@ -5,6 +5,7 @@
 - [ ] Rewrite about.html.j2 template
 - [ ] Approval from owner
     - No High Priority left!
+- [ ] 
 
 
 ## Mid Priority
@@ -12,6 +13,10 @@
 - [ ] Structural Templates
     - e.g. 1, 2, ..., n rows
     - Ensure scalability
+- [ ] Multi language design
+- [ ] setup Jinja Environment consistantly
+    - maybe it is better to write functions into jinja_extensions.py? Or use macros wherever possible?
+- [ ] 
 
 ## Low Priority
 - [ ] Python image loader
@@ -19,6 +24,11 @@
 - [ ] Enhance debug possibilities
     - ? maybe ?
     - dump json?
+- [ ] 
 
 ## Nice to Have
 - [ ] Auto css update
+- [ ] 
+
+## ToDo Template
+- [ ] 
