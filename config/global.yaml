@@ -22,10 +22,13 @@ background_img:
   dir: "../assets"
   file: "flower-of-life.svg"
 
-developer:
-  name: "Zbinden"
-  prename: "Simon Michael"
-  email: "none"
+website:
+  title: "Dentosophia"
+  language: "de-CH"
+  developer:
+    name: "Zbinden"
+    prename: "Simon Michael"
+    email: "none"
 
 current_page: "none"
 content_class: "hero-body is-fullheight has-background"

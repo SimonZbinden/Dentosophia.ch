@@ -1,10 +1,9 @@
 from pathlib import Path
 
-from python import render, python_modules
+from python.python_modules import render_html
 
 ### LOAD CONFIG ###
 configs_path = Path("config/")
-configs = python_modules.load_configs(configs_path)
 
 ### SELECT TEMPLATES ###
 templates = [
@@ -22,5 +21,4 @@ templates = [
 output_dir = Path('html/')
 
 ### RENDER HTML ###
-if __name__ == "main":
-    render.render_html(output_dir, configs, templates)
+render_html(output_dir, configs_path, templates)

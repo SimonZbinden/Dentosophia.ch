@@ -77,10 +77,16 @@ background image
 }
 
 /*
- * justified text
+ * justified text with auto hyphenation
  */
-.text-is-justified{
+.text-is-justified {
   text-align: justify;
-  text-justify: auto;
+  text-justify: inter-word;  /* Better than 'auto' */
   hyphens: auto;
+  -webkit-hyphens: auto;     /* Safari */
+  -ms-hyphens: auto;         /* IE/Edge */
+
+  hyphenate-limit-chars: 6 3 3; /* min-length before/after hyphen */
+  hyphenate-limit-lines: 2;      /* Max 2 consecutive hyphenated lines */
+  overflow-wrap: break-word;     /* Emergency break */
 }
