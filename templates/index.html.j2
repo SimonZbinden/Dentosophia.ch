@@ -1,0 +1,21 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+    <div class="content-block">
+        <!-- h1 Title - only one per side for SEO -->
+        {% if h1_title is defined -%}
+        <h1 class="title">
+        {{ h1_title }}
+        </h1>
+        {%- endif %}
+
+        {%- for item in body -%}
+        {% if item.subtitle %}
+        <h2 class="subtitle">{{ item.subtitle }}</h2>
+        {% endif %}
+        {% if item.text %}
+        <p>{{ item.text }}</p>
+        {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

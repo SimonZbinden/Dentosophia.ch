@@ -1,93 +1,99 @@
 <!--
-Copyright (c) 2024, Zbinden Simon Michael
+Copyright (c) 2025, Zbinden Simon Michael
   All rights reserved.
   
   This source code is licensed under the BSD-style license found in the
   LICENSE file in the root directory of this source tree. 
 -->
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dentosophia</title>
-    <link rel="icon" href="assets/heart.ico" />
-    <!-- css -->
-    <link rel="stylesheet" href="css/bulma.css">
-    <!-- navbar burger w/ js -->
-    <link rel="stylesheet" href="css/bulma-css-burger.css">
-    <!-- own style -->
-    <link rel="stylesheet" href="css/dentosophia.css">
+              <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Dentosophia </title>
+        <link rel="icon" href="../assets/heart.ico" />
+        <!-- css -->
+        <link rel="stylesheet" href="../css/bulma.css">
+        <!-- navbar burger without js -->
+        <link rel="stylesheet" href="../css/bulma-css-burger.css">
+        <!-- own style -->
+        <link rel="stylesheet" href="../css/dentosophia.css">
   </head>
 
   <body>
     <section class="hero is-white is-fullheight">
       <!-- Hero head: will stick at the top -->
       <nav class="navbar is-warning has-shadow" role="navigation" aria-label="main navigation">
-        <div class="hero-head container">
-          
-          <!-- Brand: always visible-->
-          <div class="navbar-brand">
-            <a class="navbar-item" href="index.html">
-              <img class="py-2 px-2" style="max-height: 60px;" src="assets/logo_dentosophia_klein2.png" alt="Logo">
-            </a>
-          </div>
-          
-          <!--
-          #navbarMenu[navbar-toggle]
-          This is the navbar menu.
-          -->
-          <input type="checkbox" id="navbar-burger-toggle" class="navbar-burger-toggle is-hidden is-warning">
-          <label for="navbar-burger-toggle" class="navbar-burger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-          
-          <!-- Menu. -->
-          <div class="navbar-menu">
-            <!-- start: on the left -->
-            <div class="navbar-start">
-              <a class="navbar-item" href="philosophie.html">Philosophie</a>
-              <a class="navbar-item" href="about.html">Über mich</a>
-              <!-- DropDown Menu-->
-              <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                  Therapien
-                </a>
-            
-                <div class="navbar-dropdown">
-                  <a class="navbar-item" href="dentosophie.html">
-                    Dentosophie
-                  </a>
-                  <a class="navbar-item" href="cranio.html">
-                    Kraniosakraltherapie
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- start: on the right -->
-            <div class="navbar-end">
-              <a class="navbar-item" href="kontakt.html">Karte / Kontakt</a>
-            </div> 
-          </div>
+    <div class="hero-head container">
+        
+        <!-- Brand: always visible-->
+        <div class="navbar-brand">
+        <a class="navbar-item " href="../html/index.html">
+            <img class="py-2 px-2" style="max-height: 60px;" src="../assets//logo_dentosophia_klein2.png" alt="Logo">
+        </a>
         </div>
-      </nav>  
+        
+        <!--
+        #navbarMenu[navbar-toggle]
+        This is the navbar menu.
+        -->
+        <input type="checkbox" id="navbar-burger-toggle" class="navbar-burger-toggle is-hidden is-warning">
+        <label for="navbar-burger-toggle" class="navbar-burger">
+        <span></span>
+        <span></span>
+        <span></span>
+        </label>
+        
+        <!-- Menu. -->
+        <div class="navbar-menu">
+        <!-- start: on the left -->
+        <div class="navbar-start">
+            <a class="navbar-item " href="../html/philosophie.html">Philosophie</a>
+            <a class="navbar-item " href="../html/about.html">Über mich</a>
+            <!-- DropDown Menu-->
+            <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link ">
+                Therapien
+            </a>
+        
+            <div class="navbar-dropdown">
+                <a class="navbar-item " href="../html/dentosophie.html">
+                Dentosophie
+                </a>
+                <a class="navbar-item " href="../html/cranio.html">
+                Kraniosakraltherapie
+                </a>
+            </div>
+            </div>
+        </div>
+        <!-- start: on the right -->
+        <div class="navbar-end">
+            <a class="navbar-item " href="../html/kontakt.html">Karte / Kontakt</a>
+        </div> 
+        </div>
+    </div>
+</nav>
 
       <!-- Hero content: will be in the middle -->
       <div class="hero-body is-fullheight has-background">
-        <!-- Background --> 
-        <img alt="Hintergrundbild" class="hero-background is-transparent" src="assets/flower-of-life.svg" />
-        <!-- Content -->
+      <!-- Background image --> 
+      
+    <img
+    alt="Hintergrundbild"
+    class="hero-background is-transparent"
+    src="../assets/flower-of-life.svg"
+    />
+
+      <!-- Content: shares background above -->
         <div class="container mx-6">
           <!-- Title -->
           <div class="mb-6">
             <h1 class="title is-size-3-mobile is-size-2-desktop">
               Impressum
             </h1>
-            <h4>
+            <p>
               dentosophia.ch
-            </h4>
+            </p>
           </div>
           <!-- Sub -->
           <div class="tile is-ancestor mt-6">
@@ -96,20 +102,20 @@ Copyright (c) 2024, Zbinden Simon Michael
                 <h2 class="subtitle">
                   Kontaktadresse
                 </h2>
-                <h4>
-                  Pia Kammer <br>
+                <p>
+                  Kammer Pia <br>
                   Hohlgässli 367b <br>
                   3804 Habkern<br>
                   <br>
                   impressum@dentosophia.ch
-                </h4>
+                </p>
             </div>
             <!-- Haftungsausschluss -->
             <div class="tile is-parent is-vertical is-4">
               <h2 class="subtitle">
                 Haftungsausschluss
               </h2>
-              <h4 class="text-is-justified">
+              <p class="text-is-justified">
                 Es gilt der gesunde Menschenverstand. 
                 Darunter ist u.a. (aber keinesfalls abschliessend) zu verstehen:
                 Die Inhaberin dieser Seite ist nicht haftbar für externe Inhalte, da sie auf diese, logischerweise, keinen Einfluss hat.
@@ -126,14 +132,14 @@ Copyright (c) 2024, Zbinden Simon Michael
                 Und für solche Missgeschicke stehe ich nicht vor einem weltlichen Gericht gerade.
                 Muss ich auch noch angeben, dass ich für eventuelle Schäden aufgrund technischer Störungen ebenfalls nicht verantwortlich bin? Schonmal was von Schicksal gehört? Vielleicht sollte es gerade so sein und es hat, wahrscheinlich oder nur vielleicht, mehr mit dem Opfer denn mit mir zu tun.
                 Wie gesagt: all diese Dinge und noch viel mehr, was auf allen solchen Websiten irgendwo versteckt geschrieben steht und als Haftungauschluss gilt, gilt auch hier.
-              </h4>
+              </p>
             </div>
             <!-- Urheberrechte -->
             <div class="tile is-parent is-vertical is-4">
               <h2 class="subtitle">
                 Urheberrechte
               </h2>
-              <h4 class="text-is-justified">
+              <p class="text-is-justified">
                 Urheberrechte an Inhalten, Bildern, Fotos, Dateien und was man sonst noch so alles hier findet gehören ausschliesslich Pia Kammer oder den speziell gekennzeichneten Rechteinhabern.
                 Speziell gekennzeichnet ist hier wörtlich gemeint, denn manchmal habe ich den Hinweis dazu im Quellcode hinterlegt.
                 Dieser ist öffentlich zugänglich und für jederman einsehbar. Guckst du dort.
@@ -143,36 +149,45 @@ Copyright (c) 2024, Zbinden Simon Michael
                 <br>
                 Falls auf diesem Internetauftritt versehentlich eine Urheberrechtsverletzung begangen wurde (oder auch nur der Verdacht besteht), so wird um entsprechenden Hinweis via Email gebeten.
                 Selbstverständlich würden bei bekanntwerden solche Inhalte unverzüglich entfernt.
-              </h4>
+              </p>
             </div>
           </div>
         </div>
+      
       </div>
+
       <!-- Hero footer: will stick at the bottom -->
       <div class="hero-foot">
-        <footer class="footer ">
-          <div class="tile is-ancestor is-vcentered ml-6">
-            <!-- SEO -->
-            <div class="tile is-4">
-              <h4>
-                <strong>Wegbegleitung</strong>, <strong>Dentosophie</strong> und <strong>Craniosacral-Therapie</strong>
-                in <strong>Habkern</strong> bei <strong>Interlaken</strong> im wunderschönen <strong>Berner Oberland / Schweiz</strong>
-                durch <strong>Pia Kammer</strong>.
-              </h4>
-            </div>
-            <div class="tile is-4"><br></div>
-            <div class="tile is-4 is-vertical">
-              <a
-              href="impressum.html"
-              class="hyperlink"
-              style="color: blue;"><strong>Impressum</strong></a><br>
-              <a
-              href="dsb.html"
-              class="hyperlink">Datenschutzbestimmungen</a>
-            </div>
-          </div>
-        </footer>
+    <footer class="footer">
+        <div class="tile is-ancestor is-vcentered ml-6">
+        <!-- SEO Section -->
+        <div class="tile is-4">
+            <h4>
+            <strong>Wegbegleitung</strong>, <strong>Dentosophie</strong> und <strong>Cranio-Sacral Therapie</strong>
+            in <strong>Habkern</strong>  bei <strong>Interlaken</strong>  im wunderschönen <strong>Berner Oberland / Schweiz</strong> 
+            durch <strong>Pia Kammer</strong>.
+        </h4>
       </div>
+      
+      <!-- Spacer -->
+      <div class="tile is-4"><br></div>
+      
+      <!-- Links -->
+      <div class="tile is-4 is-vertical">
+        <a 
+        href="../html/impressum.html" 
+        class="hyperlink"
+         style="color: blue;"><strong >Impressum</a>
+        <br>
+        <a 
+        href="../html/dsb.html" 
+        class="hyperlink"
+        >Datenschutzbestimmungen</a>
+      </div>
+    </div>
+  </footer>
+</div>
     </section>
+    
   </body>
 </html>

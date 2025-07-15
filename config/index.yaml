@@ -1,0 +1,10 @@
+this_site:
+  name: "index"
+  
+h1_title: "Platzhalter"
+
+body:
+  - subtitle: "Dieser Text ist supi"    # List item 1 (full content block)
+    text: "Hier könnte Ihre Werbung stehen."
+  - subtitle: "Und hier auch"           # List item 2
+    text: "zweiter Test."

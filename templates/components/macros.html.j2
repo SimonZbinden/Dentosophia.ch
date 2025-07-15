@@ -1,0 +1,8 @@
+{# background image implementation #}
+{% macro background_image(background_img) %}
+    <img
+    alt="{{ background_img.alt }}"
+    class="{{ background_img.class }}"
+    src="{{ static_url(dir=background_img.dir, file=background_img.file) }}"
+    />
+{% endmacro %}

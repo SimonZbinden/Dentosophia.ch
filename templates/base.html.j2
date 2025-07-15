@@ -1,0 +1,35 @@
+{%- import "components/macros.html.j2" as macros -%}
+<!--
+Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.developer.prename }}
+  All rights reserved.
+  
+  This source code is licensed under the BSD-style license found in the
+  LICENSE file in the root directory of this source tree. 
+-->
+<!DOCTYPE html>
+<html lang="{{ website.language }}">
+  <head>
+      {% include "components/header.html.j2" %}
+  </head>
+
+  <body>
+    <section class="hero is-white is-fullheight">
+      <!-- Hero head: will stick at the top -->
+      {% include "components/navbar.html.j2" %}
+
+      <!-- Hero content: will be in the middle -->
+      <div class="{{ this_site.content_class }}">
+      {% if background_img is defined -%}
+      <!-- Background image --> 
+      {{ macros.background_image(background_img) }}
+      <!-- Content: shares background above -->
+      {%- endif -%}
+      {% block content %}No content found!{% endblock %}
+      </div>
+
+      <!-- Hero footer: will stick at the bottom -->
+      {% include "components/footer.html.j2" %}
+    </section>
+    
+  </body>
+</html>

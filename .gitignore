@@ -5,3 +5,8 @@
 /assets/pia/
 /assets/praxis/
 /assets/text/
+
+# Ignore everything in depricated
+/depricated/
+/.venv/
+
