@@ -9,27 +9,29 @@ Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.deve
 <!DOCTYPE html>
 <html lang="{{ website.language }}">
   <head>
-      {% include "components/header.html.j2" %}
+    <!-- generic header elements -->
+    {% include "components/header.html.j2" %}
+    <!-- dynamic header elements (overwrite in jinja2 child template) -->
+    <style>
+      .dynamic-bg {
+        background: 
+          linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+          url('{{ background_img }}') center/cover fixed;
+      }
+    </style>
+    <!-- navbar -->
+    {% include "components/navbar.html.j2" %}
   </head>
 
   <body>
-    <section class="hero is-white is-fullheight">
-      <!-- Hero head: will stick at the top -->
-      {% include "components/navbar.html.j2" %}
-
-      <!-- Hero content: will be in the middle -->
-      <div class="{{ this_site.content_class }}">
-      {% if background_img is defined -%}
-      <!-- Background image --> 
-      {{ macros.background_image(background_img) }}
-      <!-- Content: shares background above -->
-      {%- endif -%}
-      {% block content %}No content found!{% endblock %}
+    <!-- Main Content -->
+    <main class="section {% if background_img %}dynamic-bg-content{% endif %}">
+      <div class="container">
+        {% block content %}No content found!{% endblock %}
       </div>
+    </main>
 
-      <!-- Hero footer: will stick at the bottom -->
-      {% include "components/footer.html.j2" %}
-    </section>
-    
+    <!-- Hero footer: will stick at the bottom -->
+    {% include "components/footer.html.j2" %}    
   </body>
 </html>

@@ -16,6 +16,7 @@
 - [ ] Multi language design
 - [ ] setup Jinja Environment consistantly
     - maybe it is better to write functions into jinja_extensions.py? Or use macros wherever possible?
+- [ ] Move navbar to head
 - [ ] 
 
 ## Low Priority

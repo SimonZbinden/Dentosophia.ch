@@ -1,16 +1,14 @@
-# censored for usage with LLMs
-
 personal:
-  first_name: "Maria"
-  last_name: "Mustermann"
-  adress: "Strasse 1a"
-  zip: "1234"
-  city: "Ortschaft"
-  city_nearby: "Umgebung"
-  canton: "Kanton"
+  first_name: "Pia"
+  last_name: "Kammer"
+  adress: "Hohlgässli 367b"
+  zip: "3804"
+  city: "Habkern"
+  city_nearby: "Interlaken"
+  canton: "Berner Oberland"
   country: "Schweiz"
-  email: "info@email.ch"
-  jobs: ["job1", "job2", "job3"]
+  email: "info@dentosophia.ch"
+  jobs: ["Wegbegleitung", "Dentosophie", "Cranio-Sacral Therapie"]
 
 links:
   dir: "../html"
@@ -25,11 +23,11 @@ background_img:
   file: "flower-of-life.svg"
 
 website:
-  title: "Arbeitstitel"
+  title: "Dentosophia"
   language: "de-CH"
   developer:
-    name: "Schweizer"
-    prename: "Hans"
+    name: "Zbinden"
+    prename: "Simon Michael"
     email: "none"
 
 this_site:

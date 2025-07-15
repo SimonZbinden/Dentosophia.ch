@@ -7,14 +7,15 @@ configs_path = Path("config/")
 
 ### SELECT TEMPLATES ###
 templates = [
-    "index",
-    "impressum",
-    "dsb",
-    "about",
-    "kontakt",
-    "philosophie",
-    "dentosophie",
-    "cranio",
+    #"index",
+    #"impressum",
+    #"dsb",
+    #"about",
+    #"kontakt",
+    #"philosophie",
+    #"dentosophie",
+    #"cranio",
+    "empty_body"
     ]
 
 ### SET OUTPUT DIRECTORY ###
