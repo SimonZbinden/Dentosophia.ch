@@ -1,4 +1,3 @@
-{%- import "components/macros.html.j2" as macros -%}
 <!--
 Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.developer.prename }}
   All rights reserved.
@@ -9,26 +8,26 @@ Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.deve
 <!DOCTYPE html>
 <html lang="{{ website.language }}">
   <head>
-    <!-- generic header elements -->
     {% include "components/header.html.j2" %}
-    <!-- dynamic header elements (overwrite in jinja2 child template) -->
+    <!-- dynamic styles -->
     <style>
-      .dynamic-bg {
-        background: 
-          linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
-          url('{{ background_img }}') center/cover fixed;
-      }
+    .has-background {
+      background-image: url('../assets/flower-of-life.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      background-attachment: fixed;
+    }
     </style>
-    <!-- navbar -->
-    {% include "components/navbar.html.j2" %}
   </head>
 
   <body>
+    <!-- navbar -->
+    {% include "components/navbar.html.j2" %}
+
     <!-- Main Content -->
-    <main class="section {% if background_img %}dynamic-bg-content{% endif %}">
-      <div class="container">
-        {% block content %}No content found!{% endblock %}
-      </div>
+    <main class="section {% if background_img %}has-background{% endif %}">
+      {% block content %}No content found!{% endblock %}
     </main>
 
     <!-- Hero footer: will stick at the bottom -->
