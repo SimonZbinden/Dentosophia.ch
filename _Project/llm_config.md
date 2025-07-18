@@ -68,25 +68,25 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
 - **Avoid logic in templates**: Move complex logic to Python (e.g., filtering data).  
 - **Current base.html.j2 file**:  
   ```html
-    <!DOCTYPE html>
-    <html lang="{{ website.language }}">
-    <head>
-        {% include "components/header.html.j2" %}
-    </head>
+<!DOCTYPE html>
+<html lang="{{ website.language }}">
+  <head>
+    {% include "components/header.html.j2" %}
+  </head>
 
-    <body>
-        <!-- navbar -->
-        {% include "components/navbar.html.j2" %}
+  <body>
+    <!-- navbar -->
+    {% include "components/navbar.html.j2" %}
 
-        <!-- Main Content -->
-        <main class="section {% if background_img %}has-background{% endif %}">
-        {% block content %}No content found!{% endblock %}
-        </main>
+    <!-- Main Content -->
+    <main class="{{ this_site.main_class }}">
+      {% block content %}No content found!{% endblock %}
+    </main>
 
-        <!-- Hero footer: will stick at the bottom -->
-        {% include "components/footer.html.j2" %}    
-    </body>
-    </html>
+    <!-- Hero footer: will stick at the bottom -->
+    {% include "components/footer.html.j2" %}    
+  </body>
+</html>
   ```
 - **Current navbar.html.j2 file**:
     ```html
@@ -182,14 +182,15 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
       prename: "Hans"
       email: "none"
 
-    this_site:
+  this_site:
     name: "none"
+    main_class: "section"
     content_class: "hero-body is-fullheight has-background"
 ```
 **Current about.yaml file:**
   ```yaml
   this_site:
-    name: "about"
+    name: "about"   # overwrites this_site.name in global.yaml (deep merge logic in Python)
   ```
 ---
 
