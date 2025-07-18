@@ -9,16 +9,6 @@ Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.deve
 <html lang="{{ website.language }}">
   <head>
     {% include "components/header.html.j2" %}
-    <!-- dynamic styles -->
-    <style>
-    .has-background {
-      background-image: url('../assets/flower-of-life.svg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-      background-attachment: fixed;
-    }
-    </style>
   </head>
 
   <body>
@@ -26,7 +16,7 @@ Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.deve
     {% include "components/navbar.html.j2" %}
 
     <!-- Main Content -->
-    <main class="section {% if background_img %}has-background{% endif %}">
+    <main class="{{ this_site.main_class }}">
       {% block content %}No content found!{% endblock %}
     </main>
 

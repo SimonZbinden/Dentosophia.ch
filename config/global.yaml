@@ -34,4 +34,5 @@ website:
 
 this_site:
   name: "none"
+  main_class: "section"
   content_class: "hero-body is-fullheight has-background"
