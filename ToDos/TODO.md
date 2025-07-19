@@ -1,7 +1,7 @@
 # Project TODOs
 
 ## High Priority
-- [ ] Renew Bulma CSS
+- [x] Renew Bulma CSS
 - [ ] Rewrite about.html.j2 template
 - [ ] Approval from owner
     - No High Priority left!
@@ -24,6 +24,9 @@
 - [ ] Enhance debug possibilities
     - ? maybe ?
     - dump json?
+- [ ] Change sitename from ".html" to ""
+    - server side rewrite rules
+    - href changes in templates
 - [ ] 
 
 ## Nice to Have
