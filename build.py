@@ -10,7 +10,7 @@ templates = [
     #"index",
     #"impressum",
     #"dsb",
-    #"about",
+    "about",
     #"kontakt",
     #"philosophie",
     #"dentosophie",
