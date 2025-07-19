@@ -82,3 +82,10 @@
   hyphenate-limit-chars: 6 3 3; /* min-length before/after hyphen */
   overflow-wrap: break-word;     /* Emergency break */
 }
+
+/* Mobile column reordering */
+@media screen and (max-width: 768px) {
+    .is-flex-direction-column-reverse-mobile {
+        flex-direction: column-reverse !important;
+    }
+}
