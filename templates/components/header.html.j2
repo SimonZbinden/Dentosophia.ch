@@ -1,6 +1,6 @@
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> {{ website.title }} | {{ this_site.title }}</title>
+    <title> {{ website.title }} | {% if this_site.tab_title is defined %} {{this_site.tab_title}} {% else %} {{ this_site.title }} {% endif %} </title>
     <link rel="icon" href="{{ static_url(dir='../assets', file='heart.ico') }}" />
     <!-- css -->
     <link rel="stylesheet" href="{{ static_url(dir='../css', file='bulma.css') }}">

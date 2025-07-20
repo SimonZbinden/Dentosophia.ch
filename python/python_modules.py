@@ -30,14 +30,26 @@ def load_configs(configs_path: Path) -> dict:
         configs[config_name] = import_config(config_file)
     return configs
 
-def deep_merge(base, update):
-    """Merges dictionaries recursively, preserving unmentioned keys"""
+def deep_merge(base: dict, update: dict) -> dict:
+    """
+    Merges dictionaries recursively, preserving unmentioned keys
+    
+    PRE:
+        update is a dictionary
+    
+    Args:
+        base (dict): The base dictionary to merge into.
+        update (dict): The dictionary with updates to apply.
+    Returns:
+        dict: A new dictionary with the merged contents.
+    """
+    new_dict = base.copy() if isinstance(base, dict) else {}
     for key, value in update.items():
-        if isinstance(value, dict) and key in base and isinstance(base[key], dict):
-            base[key] = deep_merge(base[key], value)
+        if isinstance(value, dict) and key in new_dict:
+            new_dict[key] = deep_merge(new_dict[key], value)
         else:
-            base[key] = value
-    return base
+            new_dict[key] = value
+    return new_dict
 
 def render_html(
     output_dir: Path,

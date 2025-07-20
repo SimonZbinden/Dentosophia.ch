@@ -1,3 +1,4 @@
 this_site:
-  name: "about"
+  name: "about" # has to match name of the page!
   title: "Ein wenig über mich"
+  tab_title: "Über mich"    # replaces 'title' in the HTML head
