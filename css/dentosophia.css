@@ -5,10 +5,6 @@
  *  This source code is licensed under the BSD-style license found in the
  *  LICENSE file in the root directory of this source tree. 
  */
- 
-/* 
- * When background exists 
- */
 
 
 /* Navbar transparency */
@@ -42,8 +38,8 @@
   box-shadow: 5px 5px 20px rgb(73, 71, 41);
   height: 0;
   overflow: hidden;
-  margin-left: 10%;
-  margin-right: 10%;
+  border-radius: 4px; /* matches Bulma's $radius */
+  margin: 1.5rem auto; /* consistent with Bulma's spacing */
 }
 .google-maps iframe {
   position: absolute;
@@ -51,6 +47,15 @@
   left: 0;
   width: 100% !important;
   height: 100% !important;
+  border: 0; /* remove default iframe border */
+  filter: brightness(0.98); /* reduce glare */
+}
+@media screen and (max-width: 768px) {
+  .google-maps {
+    padding-bottom: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /*
@@ -68,6 +73,13 @@
 .hyperlink{
   color: #120aee;
 }
+/* Auto-add to external links */
+a[target="_blank"]:not([href^="{{"])::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 0.25em;
+  font-size: 1em;
+}
 
 /*
  * justified text with auto hyphenation
@@ -83,9 +95,8 @@
   overflow-wrap: break-word;     /* Emergency break */
 }
 
-/* Mobile column reordering */
-@media screen and (max-width: 768px) {
-    .is-flex-direction-column-reverse-mobile {
-        flex-direction: column-reverse !important;
-    }
+address {
+  font-style: normal;
+  font-family: inherit; /* Uses the same font as the rest of the page */
+  line-height: 1.5; /* Match Bulma's default line height */
 }

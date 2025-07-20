@@ -11,7 +11,7 @@ templates = [
     #"impressum",
     #"dsb",
     "about",
-    #"kontakt",
+    "kontakt",
     #"philosophie",
     #"dentosophie",
     #"cranio",
