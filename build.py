@@ -15,7 +15,8 @@ templates = [
     #"philosophie",
     #"dentosophie",
     #"cranio",
-    "empty_body"
+    "empty_body",
+    "test",
     ]
 
 ### SET OUTPUT DIRECTORY ###

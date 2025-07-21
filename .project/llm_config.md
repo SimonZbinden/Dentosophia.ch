@@ -184,6 +184,7 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
 
   this_site:
     name: "none"
+    title: "No Title"
     main_class: "section"
     content_class: "hero-body is-fullheight has-background"
 ```
@@ -191,6 +192,8 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
   ```yaml
   this_site:
     name: "about"   # overwrites this_site.name in global.yaml (deep merge logic in Python)
+    title: "Ein wenig über mich"
+    tab_title: "Über mich" 
   ```
 ---
 
@@ -205,8 +208,10 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
    - **Minimal templates**: 
       - Pass *only* needed data from Python to Jinja.  
       - Focus on maintainable solutions over clever abstractions.
-3. **No JavaScript**:  
-   - Leverage Jinja’s `{% if %}` for dynamic UI (no DOM manipulation). 
+3. **JavaScript Ban ❌**:  
+   - **No JavaScript under any circumstances**.  
+   - Dynamic features must use Jinja2 or CSS-only solutions.  
+   - Violations trigger immediate architectural review.  
 
 ---
 
@@ -232,6 +237,9 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
 ## **User Interaction**  
 - Keep your answers as short as possible and as long as needed.
 - Do not explain why your code works, what you changed, etc.
+**When LLM suggests JavaScript**:  
+- Reject the solution outright.  
+- Respond with: "Architecture violation: JS ban. Propose a Jinja2/CSS alternative."
 
 ---
 
