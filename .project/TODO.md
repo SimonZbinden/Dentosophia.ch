@@ -1,22 +1,25 @@
 # Project TODOs
 
 ## High Priority
-- [ ] Renew Bulma CSS
-- [ ] Rewrite about.html.j2 template
+- [x] Renew Bulma CSS
+        -> Updated to 1.0.4
+- [ ] Rewrite about.html.j2 template (only main content)
+    - choose structure an stick to it!
 - [ ] Approval from owner
     - No High Priority left!
+- [ ] Rewrite Head and navbar (keep SEO in mind)
 - [ ] 
 
 
 ## Mid Priority
-- [ ] Unit test
 - [ ] Structural Templates
     - e.g. 1, 2, ..., n rows
     - Ensure scalability
 - [ ] Multi language design
 - [ ] setup Jinja Environment consistantly
     - maybe it is better to write functions into jinja_extensions.py? Or use macros wherever possible?
-- [ ] Move navbar to head
+- [x] Move navbar to head
+        -> Nope, stays in body
 - [ ] 
 
 ## Low Priority
@@ -25,6 +28,7 @@
 - [ ] Enhance debug possibilities
     - ? maybe ?
     - dump json?
+    - Unit Test?
 - [ ] 
 
 ## Nice to Have

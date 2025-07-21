@@ -55,8 +55,8 @@ background image
   box-shadow: 5px 5px 20px rgb(73, 71, 41);
   height: 0;
   overflow: hidden;
-  margin-left: 10%;
-  margin-right: 10%;
+  border-radius: 4px; /* matches Bulma's $radius */
+  margin: 1.5rem auto; /* consistent with Bulma's spacing */
 }
 .google-maps iframe {
   position: absolute;
@@ -64,6 +64,15 @@ background image
   left: 0;
   width: 100% !important;
   height: 100% !important;
+  border: 0; /* remove default iframe border */
+  filter: brightness(0.98); /* reduce glare */
+}
+@media screen and (max-width: 768px) {
+  .google-maps {
+    padding-bottom: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /*
@@ -81,6 +90,13 @@ background image
 .hyperlink{
   color: #120aee;
 }
+/* Auto-add to external links */
+a[target="_blank"]:not([href^="{{"])::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 0.25em;
+  font-size: 1em;
+}
 
 /*
  * justified text with auto hyphenation
@@ -94,4 +110,10 @@ background image
 
   hyphenate-limit-chars: 6 3 3; /* min-length before/after hyphen */
   overflow-wrap: break-word;     /* Emergency break */
+}
+
+address {
+  font-style: normal;
+  font-family: inherit; /* Uses the same font as the rest of the page */
+  line-height: 1.5; /* Match Bulma's default line height */
 }

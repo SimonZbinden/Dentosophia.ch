@@ -10,12 +10,13 @@ templates = [
     #"index",
     #"impressum",
     #"dsb",
-    #"about",
-    #"kontakt",
+    "about",
+    "kontakt",
     #"philosophie",
     #"dentosophie",
     #"cranio",
-    "empty_body"
+    "empty_body",
+    "test",
     ]
 
 ### SET OUTPUT DIRECTORY ###

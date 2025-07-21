@@ -1,0 +1,45 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<section class="hero is-fullheight-with-navbar">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <!-- Logo + Name -->
+      <figure class="image is-128x128 is-inline-block">
+        <img src="{{ static_url(dir='../assets', file='logo_dentosophia_klein2.png') }}" 
+             alt="{{ personal.first_name }} {{ personal.last_name }}">
+      </figure>
+      <h1 class="title is-1 mt-4">
+        {{ personal.first_name }} <span class="has-text-weight-normal">{{ personal.last_name }}</span>
+      </h1>
+
+      <!-- Core Offerings (SEO Keywords) -->
+      <div class="content is-medium mt-6">
+        <p class="subtitle is-4">
+          {{ website.tagline | default("Dentosophie & Kraniosakraltherapie in " ~ personal.city) }}
+        </p>
+        <div class="buttons is-centered mt-5">
+          <a href="{{ static_url(dir='../html', file='kontakt.html') }}" 
+             class="button is-warning is-medium">
+            Termin vereinbaren
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Signals (Hidden from mobile) -->
+  <div class="hero-foot is-hidden-mobile">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-narrow has-text-centered">
+          <p class="is-size-7">
+            📍 {{ personal.city }}, {{ personal.canton }}<br>
+            ⏱️ {{ website.hours | default("Mo-Fr: 8:00-18:00") }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
