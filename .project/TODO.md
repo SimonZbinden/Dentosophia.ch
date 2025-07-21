@@ -8,6 +8,7 @@
 - [ ] Approval from owner
     - No High Priority left!
 - [ ] Rewrite Head and navbar (keep SEO in mind)
+- [ ] Design for Dark Mode
 - [ ] 
 
 
@@ -16,6 +17,7 @@
     - e.g. 1, 2, ..., n rows
     - Ensure scalability
 - [ ] Multi language design
+- [ ] Switch from Dark to Light mode should be possible
 - [ ] setup Jinja Environment consistantly
     - maybe it is better to write functions into jinja_extensions.py? Or use macros wherever possible?
 - [x] Move navbar to head
