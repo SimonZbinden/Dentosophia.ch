@@ -32,11 +32,12 @@ def load_configs(configs_path: Path) -> dict:
 
 def deep_merge(base, update):
     """Merges dictionaries recursively, preserving unmentioned keys"""
-    for key, value in update.items():
-        if isinstance(value, dict) and key in base and isinstance(base[key], dict):
-            base[key] = deep_merge(base[key], value)
-        else:
-            base[key] = value
+    if update:
+        for key, value in update.items():
+            if isinstance(value, dict) and key in base and isinstance(base[key], dict):
+                base[key] = deep_merge(base[key], value)
+            else:
+                base[key] = value
     return base
 
 def render_html(
@@ -71,7 +72,7 @@ def render_html(
             rendered_files.append(output_path)
         except Exception as e:
             print(f"Error rendering {template}: {str(e)}")
-            raise
+            continue
 
     print(f"Build complete! Rendered {len(rendered_files)} files.")
     return rendered_files

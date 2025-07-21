@@ -19,13 +19,15 @@ links:
   index: "index.html"
 
 background_img:
-  alt: "Hintergrundbild"
+  alt: ""
   class: "hero-background is-transparent"
-  dir: "../assets"
-  file: "flower-of-life.svg"
+  src: "../assets/flower-of-life.svg"
+  role: "img"         # alternative: presentation, ...
+  aria-hidden: "true"
+  loading: "lazy"
+  decoding: "async"   # browser decodes image in parallel. Good for png and svg.
 
 website:
-  title: "Arbeitstitel"
   language: "de-CH"
   developer:
     name: "Schweizer"
@@ -34,4 +36,7 @@ website:
 
 this_site:
   name: "none"
-  content_class: "hero-body is-fullheight has-background"
+  title: "Arbeitstitel"
+  description: ""
+  keywords: ["Test1", "Test2", "Test3"]
+  main_class: "hero is-fullheight"

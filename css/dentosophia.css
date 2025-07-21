@@ -6,15 +6,28 @@
  *  LICENSE file in the root directory of this source tree. 
  */
  
-/* 
- * When background exists 
- */
-
-
-/* Navbar transparency */
-.navbar.is-transparent {
-  background-color: transparent !important;
-  backdrop-filter: blur(5px);
+/*
+background image
+*/
+.hero-body.has-background {
+  position: relative;
+  overflow: hidden;
+}
+.hero-background {
+  position: absolute;
+  object-fit: contain;
+  object-position: center center;
+  pointer-events: none;   /* prevent interaction with the bg image */
+  width: 100%;
+  height: 100%;
+}
+.hero-background.is-transparent {
+  opacity: 0.1;
+}
+@media (max-width: 480px) {
+  .hero-background {
+    object-fit: cover; /* Prevents tiny SVG on mobile */
+  }
 }
 
 /*
