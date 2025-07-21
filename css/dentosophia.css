@@ -5,6 +5,14 @@
  *  This source code is licensed under the BSD-style license found in the
  *  LICENSE file in the root directory of this source tree. 
  */
+
+/*
+ * Variables
+ */
+:root {
+  --custom-shadow: 5px 5px 20px rgb(73, 71, 41);
+  --custom-radius: 4px; /* matches Bulma's $radius */
+}
  
 /*
 background image
@@ -29,6 +37,15 @@ background image
     object-fit: cover; /* Prevents tiny SVG on mobile */
   }
 }
+ /*
+  * Images
+  */
+/* Consistent image styling (matches map) */
+.image-card {
+  border-radius: var(--custom-radius);
+  box-shadow: var(--custom-shadow);
+  overflow: hidden;         /* Ensures radius clips image */
+}
 
 /*
  * customize nav bar
@@ -52,10 +69,10 @@ background image
 .google-maps {
   position: relative;
   padding-bottom: 75%; 
-  box-shadow: 5px 5px 20px rgb(73, 71, 41);
+  box-shadow: var(--custom-shadow);
   height: 0;
   overflow: hidden;
-  border-radius: 4px; /* matches Bulma's $radius */
+  border-radius: var(--custom-radius);
   margin: 1.5rem auto; /* consistent with Bulma's spacing */
 }
 .google-maps iframe {

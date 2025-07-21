@@ -71,7 +71,9 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
 <!DOCTYPE html>
 <html lang="{{ website.language }}">
   <head>
-    {% include "components/header.html.j2" %}
+    {%- filter indent(width=4) %}
+{% include "components/header.html.j2" %}
+    {%- endfilter %}
   </head>
 
   <body>
@@ -80,6 +82,15 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
 
     <!-- Main Content -->
     <main class="{{ this_site.main_class }}">
+      {%- if background_img is defined %}
+      <!-- Background Image -->
+      <img
+      {%- for attr, val in background_img.items() %}
+        {{ attr }}="{{ val }}"
+      {%- endfor %}
+      />
+      <!-- Content -->
+      {%- endif -%}
       {% block content %}No content found!{% endblock %}
     </main>
 
