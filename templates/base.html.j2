@@ -7,20 +7,24 @@ Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.deve
 -->
 <!DOCTYPE html>
 <html lang="{{ website.language }}">
-  <head>
-    {%- filter indent(width=4) %}
-{% include "components/header.html.j2" %}
-    {%- endfilter %}
-  </head>
 
-  <body>
-    <!-- navbar -->
-    {%- filter indent(width=4) %}
-{% include "components/navbar.html.j2" %}
-    {%- endfilter %}
+<head>
+  {%- filter indent(width=2) %}
+  {% include "components/header.html.j2" %}
+  {%- endfilter %}
+</head>
 
-    <!-- Main Content -->
-    <main class="{{ this_site.main_class }}">
+<body>
+  <section class="hero is-fullheight">
+    <!-- Navbar inside hero-head -->
+    <div class="hero-head">
+      {%- filter indent(width=6) %}
+{% include "components/navbar2.html.j2" %}
+      {%- endfilter %}
+    </div>
+
+    <!-- Content in hero-body -->
+    <main class="hero-body">
       {%- if background_img %}
       <!-- Background Image -->
       <img
@@ -30,14 +34,18 @@ Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.deve
       />
       <!-- Content -->
       {%- endif -%}
-        {%- filter indent(width=8) %}
+      {%- filter indent(width=6) %}
 {% block content %}No content found!{% endblock %}
-        {%- endfilter %}
+      {%- endfilter %}
     </main>
 
-    <!-- Hero footer: will stick at the bottom -->
-    {%- filter indent(width=4) %}
+    <!-- Footer inside hero-foot -->
+    <div class="hero-foot">
+      {%- filter indent(width=6) %}
 {% include "components/footer.html.j2" %}
-    {%- endfilter %}  
-  </body>
+      {%- endfilter %}
+    </div>
+  </section>
+</body>
+
 </html>

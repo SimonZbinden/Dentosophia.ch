@@ -3,4 +3,4 @@ this_site:
   title: "Ein wenig über mich"
   tab_title: "Über mich"    # replaces 'title' in the HTML head
 
-background_img: false
+#background_img: false

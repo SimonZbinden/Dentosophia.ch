@@ -1,6 +1,7 @@
-{% extends "base.html.j2" %}
+{% extends "test.html.j2" %}
 
 {% block content %}
+<div class="{{ this_site.content_class }}">
 <h1 class="title">{{ this_site.title }}</h1>
 {# first row #}
 <div class="columns">
@@ -41,5 +42,6 @@
     <h3 class="subtitle is-4">Auto</h3>
     <p>Parkplatz vorhanden (Bitte anfragen für Wegbeschreibung).</p>
   </div>
+</div>
 </div>
 {% endblock content %}

@@ -1,5 +1,6 @@
 this_site:
   name: "index"
+  content_class: "hero is-fullheight-with-navbar"
   
 h1_title: "Platzhalter"
 
