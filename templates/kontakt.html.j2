@@ -1,57 +1,45 @@
 {% extends "base.html.j2" %}
 
 {% block content %}
-        <h1 class="title">{{ this_site.title }}</h1>
-        {# first row #}
-        <div class="columns">
-          <div class="column is-half">
-            <h2 class="subtitle is-3">Adresse</h3>
-            <address class="content">
-            {{ personal.last_name }} {{ personal.first_name }} <br>
-            {{ personal.adress }} <br>
-            {{ personal.zip }} {{ personal.city }}
-            </address>
-            <img 
-              src="../assets/ntlnr.png" 
-              alt="Natel Nr"
-              class="responsive-img mt-4 mb-1">
-              <br>
-            <a 
-            href="{{ this_site.mail_to}}" 
-            class="button is-link is-light py-2">E-mail schreiben</a>
-            <br>
-          </div>
-            
-          <div class="column">
-            <h2 class="subtitle is-3 mb-0">Karte</h3>
-            <div class="google-maps">
-              <iframe
-                src="{{ this_site.google_maps_url }}"
-                title="Karte zur Praxis"
-                loading="lazy"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-        </div>
-        {# second row #}
-        <h2 class="subtitle is-3">Anfahrt</h2>
-        <div class="columns">
-          <div class="column is-half">
-            <h3 class="subtitle is-4">Öffentliche Verkehrsmittel</h3>
-            <p>
-            <strong>Postauto 106</strong> von <strong>Interlaken West</strong> nach <strong>Habkern Post</strong>.
-            </p>
-              <a
-            href="https://www.öv-info.ch/sites/default/files/fap/{{ current_year() }}/pdf/31.106.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="button is-warning">
-            Fahrplan {{ current_year() }} öffnen</a>
-          </div>
-          <div class="column">
-            <h3 class="subtitle is-4">Auto</h3>
-            <p>Parkplatz vorhanden (Bitte anfragen für Wegbeschreibung).</p>
-          </div>
-        </div>
+<h1 class="title">{{ this_site.title }}</h1>
+{# first row #}
+<div class="columns">
+  <div class="column is-half">
+    <h2 class="subtitle is-3">Adresse</h3>
+      <address class="content">
+        {{ personal.last_name }} {{ personal.first_name }} <br>
+        {{ personal.adress }} <br>
+        {{ personal.zip }} {{ personal.city }}
+      </address>
+      <img src="../assets/ntlnr.png" alt="Natel Nr" class="responsive-img mt-4 mb-1">
+      <br>
+      <a href="{{ this_site.mail_to}}" class="button is-link is-light py-2">E-mail schreiben</a>
+      <br>
+  </div>
+
+  <div class="column">
+    <h2 class="subtitle is-3 mb-0">Karte</h3>
+      <div class="google-maps">
+        <iframe src="{{ this_site.google_maps_url }}" title="Karte zur Praxis" loading="lazy" allowfullscreen>
+        </iframe>
+      </div>
+  </div>
+</div>
+{# second row #}
+<h2 class="subtitle is-3">Anfahrt</h2>
+<div class="columns">
+  <div class="column is-half">
+    <h3 class="subtitle is-4">Öffentliche Verkehrsmittel</h3>
+    <p>
+      <strong>Postauto 106</strong> von <strong>Interlaken West</strong> nach <strong>Habkern Post</strong>.
+    </p>
+    <a href="https://www.öv-info.ch/sites/default/files/fap/{{ current_year() }}/pdf/31.106.pdf" target="_blank"
+      rel="noopener noreferrer" class="button is-warning">
+      Fahrplan {{ current_year() }} öffnen</a>
+  </div>
+  <div class="column">
+    <h3 class="subtitle is-4">Auto</h3>
+    <p>Parkplatz vorhanden (Bitte anfragen für Wegbeschreibung).</p>
+  </div>
+</div>
 {% endblock content %}

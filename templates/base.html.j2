@@ -30,9 +30,9 @@ Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.deve
       />
       <!-- Content -->
       {%- endif -%}
-      {%- filter indent(width=6) %}
+        {%- filter indent(width=8) %}
 {% block content %}No content found!{% endblock %}
-      {%- endfilter %}
+        {%- endfilter %}
     </main>
 
     <!-- Hero footer: will stick at the bottom -->

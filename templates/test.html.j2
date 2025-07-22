@@ -1,45 +1,44 @@
-{% extends "base.html.j2" %}
+<!DOCTYPE html>
+<html lang="{{ website.language }}">
 
-{% block content %}
-<section class="hero is-fullheight-with-navbar">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <!-- Logo + Name -->
-      <figure class="image is-128x128 is-inline-block">
-        <img src="{{ static_url(dir='../assets', file='logo_dentosophia_klein2.png') }}" 
-             alt="{{ personal.first_name }} {{ personal.last_name }}">
-      </figure>
-      <h1 class="title is-1 mt-4">
-        {{ personal.first_name }} <span class="has-text-weight-normal">{{ personal.last_name }}</span>
-      </h1>
+<head>
+  {%- filter indent(width=2) %}
+  {% include "components/header.html.j2" %}
+  {%- endfilter %}
+</head>
 
-      <!-- Core Offerings (SEO Keywords) -->
-      <div class="content is-medium mt-6">
-        <p class="subtitle is-4">
-          {{ website.tagline | default("Dentosophie & Kraniosakraltherapie in " ~ personal.city) }}
-        </p>
-        <div class="buttons is-centered mt-5">
-          <a href="{{ static_url(dir='../html', file='kontakt.html') }}" 
-             class="button is-warning is-medium">
-            Termin vereinbaren
-          </a>
-        </div>
-      </div>
+<body>
+  <section class="hero is-fullheight">
+    <!-- Navbar inside hero-head -->
+    <div class="hero-head">
+      {%- filter indent(width=6) %}
+{% include "components/navbar2.html.j2" %}
+      {%- endfilter %}
     </div>
-  </div>
 
-  <!-- Trust Signals (Hidden from mobile) -->
-  <div class="hero-foot is-hidden-mobile">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-narrow has-text-centered">
-          <p class="is-size-7">
-            📍 {{ personal.city }}, {{ personal.canton }}<br>
-            ⏱️ {{ website.hours | default("Mo-Fr: 8:00-18:00") }}
-          </p>
-        </div>
-      </div>
+    <!-- Content in hero-body -->
+    <main class="hero-body">
+      {%- if background_img %}
+      <!-- Background Image -->
+      <img
+      {%- for attr, val in background_img.items() %}
+        {{ attr }}="{{ val }}"
+      {%- endfor %}
+      />
+      <!-- Content -->
+      {%- endif -%}
+        {%- filter indent(width=8) %}
+{% block content %}No content found!{% endblock %}
+        {%- endfilter %}
+    </main>
+
+    <!-- Footer inside hero-foot -->
+    <div class="hero-foot">
+      {%- filter indent(width=6) %}
+{% include "components/footer.html.j2" %}
+      {%- endfilter %}
     </div>
-  </div>
-</section>
-{% endblock %}
+  </section>
+</body>
+
+</html>

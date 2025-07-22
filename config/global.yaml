@@ -41,4 +41,4 @@ this_site:
   main_class: "hero is-fullheight"
   title: "None"
   main_class: "section"
-  content_class: "hero-body is-fullheight has-background"
+  content_class: "hero is-fullheight-with-navbar"
