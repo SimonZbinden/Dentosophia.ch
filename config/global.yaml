@@ -17,6 +17,9 @@ links:
   impressum: "impressum.html"
   dsb: "dsb.html"
   index: "index.html"
+  about: "about.html"
+  kontakt: "kontakt.html"
+  
 
 background_img:
   alt: ""

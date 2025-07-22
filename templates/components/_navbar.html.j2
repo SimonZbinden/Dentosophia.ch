@@ -6,27 +6,32 @@
       <img class="py-2 px-2" style="max-height: 60px;"
         src="{{ static_url(dir='../assets/', file='logo_dentosophia_klein2.png') }}" alt="Logo">
     </a>
-
-    <!-- burger for mobile -->
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
   </div>
+
+  <!--
+      #navbarMenu[navbar-toggle]
+      This is the navbar menu.
+      -->
+  <input type="checkbox" id="navbar-burger-toggle" class="navbar-burger-toggle is-hidden is-warning">
+  <label for="navbar-burger-toggle" class="navbar-burger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
 
   <!-- Menu. -->
   <div class="navbar-menu">
     <!-- start: on the left -->
     <div class="navbar-start">
+      <a class="navbar-item {% if this_site.name == 'philosophie' %}is-active{% endif %}"
+        href="{{ static_url(dir='../html', file='philosophie.html')}}">Philosophie</a>
       <a class="navbar-item {% if this_site.name == 'about' %}is-active{% endif %}"
         href="{{ static_url(dir='../html', file='about.html')}}">Über mich</a>
       <!-- DropDown Menu-->
       <div class="navbar-item has-dropdown is-hoverable">
         <a
-          class="navbar-link {% if this_site.name == 'dentosophie' %}is-active{% endif %}">
-          Dentosophie
+          class="navbar-link {% if this_site.name == 'dentosophie' or this_site.name == 'cranio' %}is-active{% endif %}">
+          Therapien
         </a>
 
         <div class="navbar-dropdown">

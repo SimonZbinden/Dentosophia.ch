@@ -70,19 +70,25 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
   ```html
 <!DOCTYPE html>
 <html lang="{{ website.language }}">
-  <head>
-    {%- filter indent(width=4) %}
-{% include "components/header.html.j2" %}
-    {%- endfilter %}
-  </head>
 
-  <body>
-    <!-- navbar -->
-    {% include "components/navbar.html.j2" %}
+<head>
+  {%- filter indent(width=2) %}
+  {% include "components/header.html.j2" %}
+  {%- endfilter %}
+</head>
 
-    <!-- Main Content -->
-    <main class="{{ this_site.main_class }}">
-      {%- if background_img is defined %}
+<body>
+  <section class="hero is-fullheight">
+    <!-- Navbar inside hero-head -->
+    <div class="hero-head">
+      {%- filter indent(width=6) %}
+{% include "components/navbar.html.j2" %}
+      {%- endfilter %}
+    </div>
+
+    <!-- Content in hero-body -->
+    <main class="hero-body">
+      {%- if background_img %}
       <!-- Background Image -->
       <img
       {%- for attr, val in background_img.items() %}
@@ -91,12 +97,20 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
       />
       <!-- Content -->
       {%- endif -%}
-      {% block content %}No content found!{% endblock %}
+      {%- filter indent(width=6) %}
+{% block content %}No content found!{% endblock %}
+      {%- endfilter %}
     </main>
 
-    <!-- Hero footer: will stick at the bottom -->
-    {% include "components/footer.html.j2" %}    
-  </body>
+    <!-- Footer inside hero-foot -->
+    <div class="hero-foot">
+      {%- filter indent(width=6) %}
+{% include "components/footer.html.j2" %}
+      {%- endfilter %}
+    </div>
+  </section>
+</body>
+
 </html>
   ```
 - **Current navbar.html.j2 file**:
