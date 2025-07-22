@@ -1,7 +1,29 @@
 <footer class="footer">
-  <div class="content has-text-centered">
-    <p>
-      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
-    </p>
+  <div class="columns is-vcentered">
+    <!-- Left-aligned content -->
+    <div class="column is-8 has-text-centered">
+      {% for job in personal.jobs -%}
+      <strong>{{ job }}</strong>{% if loop.revindex0 == 1 %} und {% elif not loop.last %}, {% endif %}
+      {%- endfor %}
+      <br>in <strong>{{ personal.city }}</strong> {% if personal.city_nearby is defined %} bei <strong>{{
+        personal.city_nearby }}</strong> {% endif %} im wunderschönen <strong>{{ personal.canton }} / {{
+        personal.country }}</strong>
+      <br>durch <strong>{{ personal.first_name }} {{ personal.last_name }}</strong>.
+    </div>
+
+    <!-- Right-aligned links -->
+    <div class="column has-text-right">
+      <div class="is-inline-block">
+        <a href="{{ static_url(dir=links.dir, file=links.impressum) }}" class="hyperlink" {% if
+          this_site.name=='impressum' %} style="color: blue;">
+          <strong {% endif %}>Impressum{% if current_page=='impressum' %}</strong>{% endif %}
+        </a>
+        <br>
+        <a href="{{ static_url(dir=links.dir, file=links.dsb) }}" class="hyperlink" {% if this_site.name=='dsb' %}
+          style="color: blue;">
+          <strong {% endif %}>Datenschutzbestimmungen{% if current_page=='dsb' %}</strong>{% endif %}
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
