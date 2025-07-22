@@ -15,11 +15,13 @@ Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.deve
 
   <body>
     <!-- navbar -->
-    {% include "components/navbar.html.j2" %}
+    {%- filter indent(width=4) %}
+{% include "components/navbar.html.j2" %}
+    {%- endfilter %}
 
     <!-- Main Content -->
     <main class="{{ this_site.main_class }}">
-      {%- if background_img is defined %}
+      {%- if background_img %}
       <!-- Background Image -->
       <img
       {%- for attr, val in background_img.items() %}
@@ -28,10 +30,14 @@ Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.deve
       />
       <!-- Content -->
       {%- endif -%}
-      {% block content %}No content found!{% endblock %}
+      {%- filter indent(width=6) %}
+{% block content %}No content found!{% endblock %}
+      {%- endfilter %}
     </main>
 
     <!-- Hero footer: will stick at the bottom -->
-    {% include "components/footer.html.j2" %}    
+    {%- filter indent(width=4) %}
+{% include "components/footer.html.j2" %}
+    {%- endfilter %}  
   </body>
 </html>

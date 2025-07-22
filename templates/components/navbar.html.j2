@@ -1,50 +1,57 @@
 <nav class="navbar is-warning has-shadow" role="navigation" aria-label="main navigation">
-    <div class="hero-head container">
-        
-        <!-- Brand: always visible-->
-        <div class="navbar-brand">
-        <a class="navbar-item {% if this_site.name == 'index' %}is-active{% endif %}" href="{{ static_url(dir=links.dir, file=links.index) }}">
-            <img class="py-2 px-2" style="max-height: 60px;" src="{{ static_url(dir='../assets/', file='logo_dentosophia_klein2.png') }}" alt="Logo">
-        </a>
-        </div>
-        
-        <!--
-        #navbarMenu[navbar-toggle]
-        This is the navbar menu.
-        -->
-        <input type="checkbox" id="navbar-burger-toggle" class="navbar-burger-toggle is-hidden is-warning">
-        <label for="navbar-burger-toggle" class="navbar-burger">
-        <span></span>
-        <span></span>
-        <span></span>
-        </label>
-        
-        <!-- Menu. -->
-        <div class="navbar-menu">
-        <!-- start: on the left -->
-        <div class="navbar-start">
-            <a class="navbar-item {% if this_site.name == 'philosophie' %}is-active{% endif %}" href="{{ static_url(dir='../html', file='philosophie.html')}}">Philosophie</a>
-            <a class="navbar-item {% if this_site.name == 'about' %}is-active{% endif %}" href="{{ static_url(dir='../html', file='about.html')}}">Über mich</a>
-            <!-- DropDown Menu-->
-            <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link {% if this_site.name == 'dentosophie' or this_site.name == 'cranio' %}is-active{% endif %}">
-                Therapien
-            </a>
-        
-            <div class="navbar-dropdown">
-                <a class="navbar-item {% if this_site.name == 'dentosophie' %}is-active{% endif %}" href="{{ static_url(dir='../html', file='dentosophie.html')}}">
-                Dentosophie
-                </a>
-                <a class="navbar-item {% if this_site.name == 'cranio' %}is-active{% endif %}" href="{{ static_url(dir='../html', file='cranio.html')}}">
-                Kraniosakraltherapie
-                </a>
-            </div>
-            </div>
-        </div>
-        <!-- start: on the right -->
-        <div class="navbar-end">
-            <a class="navbar-item {% if this_site.name == 'kontakt' %}is-active{% endif %}" href="{{ static_url(dir='../html', file='kontakt.html')}}">Karte / Kontakt</a>
-        </div> 
-        </div>
+  <div class="hero-head container">
+    <!-- Brand: always visible-->
+    <div class="navbar-brand">
+      <a class="navbar-item {% if this_site.name == 'index' %}is-active{% endif %}"
+        href="{{ static_url(dir=links.dir, file=links.index) }}">
+        <img class="py-2 px-2" style="max-height: 60px;"
+          src="{{ static_url(dir='../assets/', file='logo_dentosophia_klein2.png') }}" alt="Logo">
+      </a>
     </div>
+
+    <!--
+      #navbarMenu[navbar-toggle]
+      This is the navbar menu.
+      -->
+    <input type="checkbox" id="navbar-burger-toggle" class="navbar-burger-toggle is-hidden is-warning">
+    <label for="navbar-burger-toggle" class="navbar-burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Menu. -->
+    <div class="navbar-menu">
+      <!-- start: on the left -->
+      <div class="navbar-start">
+        <a class="navbar-item {% if this_site.name == 'philosophie' %}is-active{% endif %}"
+          href="{{ static_url(dir='../html', file='philosophie.html')}}">Philosophie</a>
+        <a class="navbar-item {% if this_site.name == 'about' %}is-active{% endif %}"
+          href="{{ static_url(dir='../html', file='about.html')}}">Über mich</a>
+        <!-- DropDown Menu-->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a
+            class="navbar-link {% if this_site.name == 'dentosophie' or this_site.name == 'cranio' %}is-active{% endif %}">
+            Therapien
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item {% if this_site.name == 'dentosophie' %}is-active{% endif %}"
+              href="{{ static_url(dir='../html', file='dentosophie.html')}}">
+              Dentosophie
+            </a>
+            <a class="navbar-item {% if this_site.name == 'cranio' %}is-active{% endif %}"
+              href="{{ static_url(dir='../html', file='cranio.html')}}">
+              Kraniosakraltherapie
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- start: on the right -->
+      <div class="navbar-end">
+        <a class="navbar-item {% if this_site.name == 'kontakt' %}is-active{% endif %}"
+          href="{{ static_url(dir='../html', file='kontakt.html')}}">Karte / Kontakt</a>
+      </div>
+    </div>
+  </div>
 </nav>

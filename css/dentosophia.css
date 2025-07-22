@@ -12,6 +12,7 @@
 :root {
   --custom-shadow: 5px 5px 20px rgb(73, 71, 41);
   --custom-radius: 4px; /* matches Bulma's $radius */
+  --main-color-light: rgba(255, 215, 0, 0.1);
 }
  
 /*
@@ -51,14 +52,15 @@ background image
  * customize nav bar
  */
  .navbar.is-warning {
-  background-color: rgba(255, 215, 0, 0.1);
+  background-color: var(--main-color-light);
  }
 
 /*
  * customize footer
  */
  .footer {
-  background-color: rgba(255, 215, 0, 0.1);
+  background-color: var(--main-color-light);
+  margin-top: auto;
  }
 
 /*
