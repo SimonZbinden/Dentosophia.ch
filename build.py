@@ -8,8 +8,8 @@ configs_path = Path("config/")
 ### SELECT TEMPLATES ###
 templates = [
     "index",
-    #"impressum",
-    #"dsb",
+    "impressum",
+    "dsb",
     "about",
     "kontakt",
     #"philosophie",
