@@ -30,3 +30,17 @@ all credits to: https://github.com/TinyJSDeveloper/bulma-css-burger
 .navbar-burger-toggle:checked ~ .navbar-menu {
   display: block !important;  /* Force show menu */
 }
+
+/* Ensure only the active navbar item is highlighted, even when menu is toggled */
+.navbar-menu .navbar-item.is-active {
+  background-color: var(--main-color-light); /* Bulma's warning light color */
+  color: rgba(0, 0, 0, 0.7); /* Adjust text color for better contrast */
+}
+
+/* Override any potential Bulma mobile-specific styles */
+@media screen and (max-width: 1023px) {
+  .navbar-menu .navbar-item.is-active {
+    background-color: var(--main-color-light);
+    color: rgba(0, 0, 0, 0.7);
+  }
+}

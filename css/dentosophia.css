@@ -51,7 +51,7 @@ background image
 /*
  * customize nav bar
  */
- .navbar.is-warning {
+ .navbar.has-background-colour {
   background-color: var(--main-color-light);
  }
 
