@@ -67,107 +67,76 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
 - **Modularize**: Use `{% extends %}` and `{% include %}` for reusable components (e.g. `{% extends "base.html.j2" %}`).  
 - **Avoid logic in templates**: Move complex logic to Python (e.g., filtering data).  
 - **Current base.html.j2 file**:  
-  ```html
-<!DOCTYPE html>
-<html lang="{{ website.language }}">
-
-<head>
-  {%- filter indent(width=2) %}
-  {% include "components/header.html.j2" %}
-  {%- endfilter %}
-</head>
-
-<body>
-  <section class="hero is-fullheight">
-    <!-- Navbar inside hero-head -->
-    <div class="hero-head">
-      {%- filter indent(width=6) %}
-{% include "components/navbar.html.j2" %}
-      {%- endfilter %}
-    </div>
-
-    <!-- Content in hero-body -->
-    <main class="hero-body">
-      {%- if background_img %}
-      <!-- Background Image -->
-      <img
-      {%- for attr, val in background_img.items() %}
-        {{ attr }}="{{ val }}"
-      {%- endfor %}
-      />
-      <!-- Content -->
-      {%- endif -%}
-      {%- filter indent(width=6) %}
-{% block content %}No content found!{% endblock %}
-      {%- endfilter %}
-    </main>
-
-    <!-- Footer inside hero-foot -->
-    <div class="hero-foot">
-      {%- filter indent(width=6) %}
-{% include "components/footer.html.j2" %}
-      {%- endfilter %}
-    </div>
-  </section>
-</body>
-
-</html>
-  ```
+    ```html
+    <!DOCTYPE html>
+    <html lang="{{ website.language }}">
+      <head>
+        {%- filter indent(width=2) %}
+        {% include "components/header.html.j2" %}
+        {%- endfilter %}
+      </head>
+      <body>
+        {%- if background_img %}
+        <img {%- for attr, val in background_img.items() %} {{ attr }}="{{ val }}" {%- endfor %} />
+        {%- endif -%}
+        <section class="hero is-fullheight">
+          <div class="hero-head">
+            {%- filter indent(width=6) %}
+            {% include "components/navbar.html.j2" %}
+            {%- endfilter %}
+          </div>
+          <main class="hero-body">
+            {%- filter indent(width=6) %}
+            {% block content %}No content found!{% endblock %}
+            {%- endfilter %}
+          </main>
+          <div class="hero-foot">
+            {%- filter indent(width=6) %}
+            {% include "components/footer.html.j2" %}
+            {%- endfilter %}
+          </div>
+        </section>
+      </body>
+    </html>
+    ```
 - **Current navbar.html.j2 file**:
     ```html
-    <nav class="navbar is-warning has-shadow" role="navigation" aria-label="main navigation">
-      <!-- Brand: always visible-->
+    <nav class="navbar has-background-colour has-shadow" role="navigation" aria-label="main navigation">
+      <input type="checkbox" id="navbar-burger-toggle" class="navbar-burger-toggle is-hidden">
       <div class="navbar-brand">
         <a class="navbar-item {% if this_site.name == 'index' %}is-active{% endif %}"
           href="{{ static_url(dir=links.dir, file=links.index) }}">
           <img class="py-2 px-2" style="max-height: 60px;"
             src="{{ static_url(dir='../assets/', file='logo_dentosophia_klein2.png') }}" alt="Logo">
         </a>
+        <label for="navbar-burger-toggle" class="navbar-burger">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span> <!-- Extra span for visual styling -->
+        </label>
       </div>
-      <!-- Burger: only for touch screens (width < 1024px) -->
-      <input type="checkbox" id="navbar-burger-toggle" class="navbar-burger-toggle is-hidden is-warning">
-      <label for="navbar-burger-toggle" class="navbar-burger">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <!-- Menu. -->
-      <div class="navbar-menu" id="navbarBasicExample">
-        <!-- start: on the left -->
+      <div class="navbar-menu">
         <div class="navbar-start">
-          <!-- Next Menu Item -->
           <a class="navbar-item {% if this_site.name == 'about' %}is-active{% endif %}"
-            href="{{ static_url(dir=links.dir, file=links.about) }}">
-            Über mich
-          </a>
-          <!-- DropDown Menu-->
+            href="{{ static_url(dir=links.dir, file=links.about) }}">Über mich</a>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link {% if this_site.name == 'dentosophie' %}is-active{% endif %}"
-              href="{{ static_url(dir=links.dir, file=links.dentosophie) }}">
-              Dentosophie
-            </a>
+            <a class="navbar-link">Dentosophie</a>
             <div class="navbar-dropdown">
-              <a class="navbar-item" href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-overview">
-                Überblick
-              </a>
-              <a class="navbar-item" href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-books">
-                Literatur
-              </a>
-              <a class="navbar-item" href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-offer">
-                Angebot
-              </a>
-              <a class="navbar-item" href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-cost">
-                Kosten
-              </a>
+              <a class="navbar-item {% if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-overview') %}is-active{% endif %}"
+                href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-overview">Überblick</a>
+              <a class="navbar-item {% if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-books') %}is-active{% endif %}"
+                href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-books">Literatur</a>
+              <a class="navbar-item {% if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-offer') %}is-active{% endif %}"
+                href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-offer">Angebot</a>
+              <a class="navbar-item {% if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-cost') %}is-active{% endif %}"
+                href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-cost">Kosten</a>
             </div>
           </div>
-          <!-- Next Menu Item -->
         </div>
-        <!-- start: on the right -->
         <div class="navbar-end">
           <a class="navbar-item {% if this_site.name == 'kontakt' %}is-active{% endif %}"
-            href="{{ static_url(dir=links.dir, file=links.kontakt) }}">Karte / Kontakt</a>
+            href="{{ static_url(dir='../html', file='kontakt.html')}}">Karte / Kontakt</a>
         </div>
       </div>
     </nav>

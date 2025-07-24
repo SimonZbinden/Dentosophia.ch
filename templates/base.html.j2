@@ -15,37 +15,32 @@ Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.deve
 </head>
 
 <body>
+  {%- if background_img %}
+  <!-- Background Image -->
+  <img {%- for attr, val in background_img.items() %} {{ attr }}="{{ val }}" {%- endfor %} />
+  {%- endif -%}
+
   <section class="hero is-fullheight">
     <!-- Navbar inside hero-head -->
     <div class="hero-head">
       {%- filter indent(width=6) %}
-{% include "components/navbar.html.j2" %}
+      {% include "components/navbar.html.j2" %}
       {%- endfilter %}
     </div>
 
     <!-- Content in hero-body -->
     <main class="hero-body">
-      {%- if background_img %}
-      <!-- Background Image -->
-      <img
-      {%- for attr, val in background_img.items() %}
-        {{ attr }}="{{ val }}"
-      {%- endfor %}
-      />
-      <!-- Content -->
-      {%- endif -%}
       {%- filter indent(width=6) %}
-{% block content %}No content found!{% endblock %}
+      {% block content %}No content found!{% endblock %}
       {%- endfilter %}
     </main>
 
     <!-- Footer inside hero-foot -->
     <div class="hero-foot">
       {%- filter indent(width=6) %}
-{% include "components/footer.html.j2" %}
+      {% include "components/footer.html.j2" %}
       {%- endfilter %}
     </div>
   </section>
 </body>
-
 </html>

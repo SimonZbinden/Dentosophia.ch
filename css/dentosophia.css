@@ -24,7 +24,7 @@ background image
 }
 .hero-background {
   position: absolute;
-  object-fit: contain;
+  object-fit: cover; /* or: cover, contain, ... */
   object-position: center center;
   pointer-events: none;   /* prevent interaction with the bg image */
   width: 100%;
