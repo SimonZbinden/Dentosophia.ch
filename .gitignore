@@ -13,4 +13,4 @@
 /html/
 
 # ignore pycache
-/python/__pycache
+/python/__pycache__
