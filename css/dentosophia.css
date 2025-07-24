@@ -33,7 +33,7 @@ background image
 .hero-background.is-transparent {
   opacity: 0.1;
 }
-@media (max-width: 480px) {
+@media (max-width: 720px) {
   .hero-background {
     object-fit: cover; /* Prevents tiny SVG on mobile */
   }

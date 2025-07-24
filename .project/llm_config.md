@@ -116,61 +116,191 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
 - **Current navbar.html.j2 file**:
     ```html
     <nav class="navbar is-warning has-shadow" role="navigation" aria-label="main navigation">
-        <div class="hero-head container">
-            
-            <!-- Brand: always visible-->
-            <div class="navbar-brand">
-            <a class="navbar-item {% if this_site.name == 'index' %}is-active{% endif %}" href="{{ static_url(dir=links.dir, file=links.index) }}">
-                <img class="py-2 px-2" style="max-height: 60px;" src="{{ static_url(dir='../assets/', file='logo_dentosophia_klein2.png') }}" alt="Logo">
+      <!-- Brand: always visible-->
+      <div class="navbar-brand">
+        <a class="navbar-item {% if this_site.name == 'index' %}is-active{% endif %}"
+          href="{{ static_url(dir=links.dir, file=links.index) }}">
+          <img class="py-2 px-2" style="max-height: 60px;"
+            src="{{ static_url(dir='../assets/', file='logo_dentosophia_klein2.png') }}" alt="Logo">
+        </a>
+      </div>
+      <!-- Burger: only for touch screens (width < 1024px) -->
+      <input type="checkbox" id="navbar-burger-toggle" class="navbar-burger-toggle is-hidden is-warning">
+      <label for="navbar-burger-toggle" class="navbar-burger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <!-- Menu. -->
+      <div class="navbar-menu" id="navbarBasicExample">
+        <!-- start: on the left -->
+        <div class="navbar-start">
+          <!-- Next Menu Item -->
+          <a class="navbar-item {% if this_site.name == 'about' %}is-active{% endif %}"
+            href="{{ static_url(dir=links.dir, file=links.about) }}">
+            Über mich
+          </a>
+          <!-- DropDown Menu-->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link {% if this_site.name == 'dentosophie' %}is-active{% endif %}"
+              href="{{ static_url(dir=links.dir, file=links.dentosophie) }}">
+              Dentosophie
             </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-overview">
+                Überblick
+              </a>
+              <a class="navbar-item" href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-books">
+                Literatur
+              </a>
+              <a class="navbar-item" href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-offer">
+                Angebot
+              </a>
+              <a class="navbar-item" href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-cost">
+                Kosten
+              </a>
             </div>
-            
-            <!--
-            #navbarMenu[navbar-toggle]
-            This is the navbar menu.
-            -->
-            <input type="checkbox" id="navbar-burger-toggle" class="navbar-burger-toggle is-hidden is-warning">
-            <label for="navbar-burger-toggle" class="navbar-burger">
-            <span></span>
-            <span></span>
-            <span></span>
-            </label>
-            
-            <!-- Menu. -->
-            <div class="navbar-menu">
-            <!-- start: on the left -->
-            <div class="navbar-start">
-                <a class="navbar-item {% if this_site.name == 'philosophie' %}is-active{% endif %}" href="{{ static_url(dir='../html', file='philosophie.html')}}">Philosophie</a>
-                <a class="navbar-item {% if this_site.name == 'about' %}is-active{% endif %}" href="{{ static_url(dir='../html', file='about.html')}}">Über mich</a>
-                <!-- DropDown Menu-->
-                <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link {% if this_site.name == 'dentosophie' or this_site.name == 'cranio' %}is-active{% endif %}">
-                    Therapien
-                </a>
-            
-                <div class="navbar-dropdown">
-                    <a class="navbar-item {% if this_site.name == 'dentosophie' %}is-active{% endif %}" href="{{ static_url(dir='../html', file='dentosophie.html')}}">
-                    Dentosophie
-                    </a>
-                    <a class="navbar-item {% if this_site.name == 'cranio' %}is-active{% endif %}" href="{{ static_url(dir='../html', file='cranio.html')}}">
-                    Kraniosakraltherapie
-                    </a>
-                </div>
-                </div>
-            </div>
-            <!-- start: on the right -->
-            <div class="navbar-end">
-                <a class="navbar-item {% if this_site.name == 'kontakt' %}is-active{% endif %}" href="{{ static_url(dir='../html', file='kontakt.html')}}">Karte / Kontakt</a>
-            </div> 
-            </div>
+          </div>
+          <!-- Next Menu Item -->
         </div>
+        <!-- start: on the right -->
+        <div class="navbar-end">
+          <a class="navbar-item {% if this_site.name == 'kontakt' %}is-active{% endif %}"
+            href="{{ static_url(dir=links.dir, file=links.kontakt) }}">Karte / Kontakt</a>
+        </div>
+      </div>
     </nav>
     ```
 
 
 ### **CSS**  
 - **BEM naming**: Use `.block__element--modifier` for clarity.  
-- **Bulma**: We use Bulma CSS Framework as our main source. Personalized CSS Code belongs into client.css.
+- **Bulma**: We use Bulma CSS Framework Version 1.0.4 as our main source. Personalized CSS Code belongs into client.css.
+- **Current client.css file**:
+    ```css
+    :root {
+      --custom-shadow: 5px 5px 20px rgb(73, 71, 41);
+      --custom-radius: 4px; /* matches Bulma's $radius */
+      --main-color-light: rgba(255, 215, 0, 0.1);
+    }
+    /*
+    background image
+    */
+    .hero-body.has-background {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-background {
+      position: absolute;
+      object-fit: contain;
+      object-position: center center;
+      pointer-events: none;   /* prevent interaction with the bg image */
+      width: 100%;
+      height: 100%;
+    }
+    .hero-background.is-transparent {
+      opacity: 0.1;
+    }
+    @media (max-width: 720px) {
+      .hero-background {
+        object-fit: cover; /* Prevents tiny SVG on mobile */
+      }
+    }
+    /*
+      * Images
+      */
+    /* Consistent image styling (matches map) */
+    .image-card {
+      border-radius: var(--custom-radius);
+      box-shadow: var(--custom-shadow);
+      overflow: hidden;         /* Ensures radius clips image */
+    }
+    /*
+    * customize nav bar
+    */
+    .navbar.is-warning {
+      background-color: var(--main-color-light);
+    }
+    /*
+    * customize footer
+    */
+    .footer {
+      background-color: var(--main-color-light);
+      margin-top: auto;
+    }
+    /*
+    * responsive google maps
+    * thanks to Amit Agarwal:
+    * https://www.labnol.org/internet/embed-responsive-google-maps/28333/
+    */
+    .google-maps {
+      position: relative;
+      padding-bottom: 75%; 
+      box-shadow: var(--custom-shadow);
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--custom-radius);
+      margin: 1.5rem auto; /* consistent with Bulma's spacing */
+    }
+    .google-maps iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+      border: 0; /* remove default iframe border */
+      filter: brightness(0.98); /* reduce glare */
+    }
+    @media screen and (max-width: 768px) {
+      .google-maps {
+        padding-bottom: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    /*
+    * hide mobile number behind img
+    */
+    .responsive-img{
+      width: 100%;
+      max-width: 110px;
+      height: auto;
+    }
+    /*
+      * hyperlinks
+      */
+    .hyperlink{
+      color: #120aee;
+    }
+    /* Auto-add to external links */
+    a[target="_blank"]:not([href^="{{"])::after {
+      content: "↗";
+      display: inline-block;
+      margin-left: 0.25em;
+      font-size: 1em;
+    }
+    /*
+    * justified text with auto hyphenation
+    */
+    .text-is-justified {
+      text-align: justify;
+      text-justify: inter-word;  /* Better than 'auto' */
+      hyphens: auto;
+      -webkit-hyphens: auto;     /* Safari */
+      -ms-hyphens: auto;         /* IE/Edge */
+      hyphenate-limit-chars: 6 3 3; /* min-length before/after hyphen */
+      overflow-wrap: break-word;     /* Emergency break */
+    }
+    address {
+      font-style: normal;
+      font-family: inherit; /* Uses the same font as the rest of the page */
+      line-height: 1.5; /* Match Bulma's default line height */
+    }
+    .navbar-burger-toggle:checked ~ .navbar-menu {
+      display: block !important;  /* Force show menu */
+    }
+    ```
 
 ### **Config Files**
 **Current global.yaml file:**
