@@ -8,5 +8,10 @@
 
 # Ignore everything in depricated
 /depricated/
+
+# Ignore rendered files
+/html/
+
+# Ignore venv
 /.venv/
 
