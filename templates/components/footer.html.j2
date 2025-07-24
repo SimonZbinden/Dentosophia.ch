@@ -14,13 +14,12 @@
     <!-- Right-aligned links -->
     <div class="column has-text-right">
       <div class="is-inline-block">
-        <a href="{{ static_url(dir=links.dir, file=links.impressum) }}" class="hyperlink" {% if
-          this_site.name=='impressum' %} style="color: blue;">
+        <a href="{{ static_url(dir=links.dir, file=links.impressum) }}" class="hyperlink has-text-link" {% if
+          this_site.name=='impressum' %}>
           <strong {% endif %}>Impressum{% if this_site.name=='impressum' %}</strong>{% endif %}
         </a>
         <br>
-        <a href="{{ static_url(dir=links.dir, file=links.dsb) }}" class="hyperlink" {% if this_site.name=='dsb' %}
-          style="color: blue;">
+        <a href="{{ static_url(dir=links.dir, file=links.dsb) }}" class="hyperlink has-text-link" {% if this_site.name=='dsb' %}>
           <strong {% endif %}>Datenschutzbestimmungen{% if this_site.name=='dsb' %}</strong>{% endif %}
         </a>
       </div>

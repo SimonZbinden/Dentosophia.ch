@@ -54,6 +54,10 @@ background image
  .navbar.has-background-colour {
   background-color: var(--main-color-light);
  }
+.navbar-burger {
+    color: var(--bulma-warning);
+ }
+
 
 /*
  * customize footer
