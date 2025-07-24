@@ -24,3 +24,7 @@ output_dir = Path('html/')
 
 ### RENDER HTML ###
 render_html(output_dir, configs_path, templates)
+
+
+### START VENV ###
+# & C:/Users/zbsi/Git/Dentosophia.ch/.venv/Scripts/Activate.ps1

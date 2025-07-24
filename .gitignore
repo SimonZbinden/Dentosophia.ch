@@ -11,3 +11,6 @@
 
 # don't export html content everytime
 /html/
+
+# ignore pycache
+/python/__pycache
