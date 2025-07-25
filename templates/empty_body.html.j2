@@ -1,0 +1,54 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="title">{{ this_site.title }}</h1>
+        
+        <!-- Row 1: Text left (2/3), Image right (1/3) -->
+        <div class="columns is-vcentered">
+            <div class="column is-two-thirds">
+                <h2 class="subtitle">Überschrift 1</h2>
+                <p>Text 1</p>
+            </div>
+            <div class="column">
+                <figure class="image">
+                    <img src=""../assets/explain.jpg"" alt="">
+                </figure>
+            </div>
+        </div>
+
+        <!-- Row 2: Image left (1/3), Text right (2/3) -->
+        <div class="columns is-vcentered">
+            <div class="column is-one-third">
+                <figure class="image">
+                    <img src="{{ static_url(dir="../assets", file="dh_pic_1.png") }}" alt="">
+                </figure>
+            </div>
+            <div class="column is-two-thirds">
+                <h2 class="subtitle">Überschrift 2</h2>
+                <p>Text 2<br>Text 2<br>Text 2</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+{# 
+Custom background for this site
+THIS CODE IS NOT TESTED!
+  {% with background_img = {
+       'file': 'legal-bg.svg',
+       'alt': 'Legal background pattern',
+       'class': 'hero-background is-dark'
+     },
+     container_class = 'legal-section'
+  %}
+    {% include "components/content_block.html.j2" %}
+  {% endwith %}
+#}
+
+{#
+<section class="section py-6-mobile">  <!-- Larger padding on mobile -->
+<div class="container px-2-mobile">   <!-- Smaller side padding on mobile -->
+#}

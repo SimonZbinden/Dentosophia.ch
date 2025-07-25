@@ -1,4 +1,4 @@
-# Ignore this folders in /assets
+# Ignore this folders in /assets because of privacy concerns
 /assets/books/
 /assets/elise/
 /assets/nature/
@@ -6,12 +6,14 @@
 /assets/praxis/
 /assets/text/
 
-# Ignore everything in depricated
+# ignore old files
 /depricated/
 
-# Ignore rendered files
-/html/
-
-# Ignore venv
+# Ignore virtual environment
 /.venv/
 
+# don't export html content everytime
+/html/
+
+# ignore pycache
+/python/__pycache__

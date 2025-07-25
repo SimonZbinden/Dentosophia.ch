@@ -1,64 +1,51 @@
 {% extends "base.html.j2" %}
 
 {% block content %}
-        <div class="tile is-ancestor">
-          <!-- left tile -->
-          <div class="tile is-parent is-vertical is-6 px-6">
-            <div class="tile is-child">
-              <h1 class="is-size-3-mobile is-size-2-desktop title">
-                Kontakt
-              </h1>
-                <p>
-                  {{ personal.last_name }} {{ personal.first_name }} <br>
-                  {{ personal.adress }} <br>
-                  {{ personal.zip }} {{ personal.city }}<br>
-                  <br>
-                  {{ personal.email }}
-                </p>
-              <img 
-                src="../assets/ntlnr.png" 
-                alt="Natel Nr"
-                class="responsive-img mt-4 mb-1">
-                <br>
-              <a 
-              href="mailto:piapia%40gmx.ch?subject=Dentosophie&amp;body=Liebe%20Pia%20Kammer" 
-              class="button is-link is-light py-2">E-mail</a>
-              <br>
-            </div>
-            
-            <div class="tile is-child">
-              <h1 class="is-size-3-mobile is-size-2-desktop title py-4">
-                Anfahrt
-              </h1>
-              <h2 class="subtitle mb-0">
-                Öffentliche Verkehrsmittel:
-              </h2>
-              <h4>
-                <strong>Postauto 106</strong> von <strong>Interlaken West</strong> nach <strong>Habkern Post</strong>.
-              </h4>
-              <a
-              href="https://www.öv-info.ch/sites/default/files/fap/{{ current_year() }}/pdf/31.106.pdf"
-              target="_blank"
-              class="button is-warning">Fahrplan</a>
-              <h2 class="subtitle mb-0 mt-4">
-                Auto:
-              </h2>            
-              <h4>
-                Parkplatz vorhanden (Bitte anfragen für Wegbeschreibung).
-              </h4>
-            </div>
-          </div>
-          <!-- right tile -->
-          <div class="tile is-6 is-vertical">
-            <div class="google-maps">
-              <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1367.4645002772993!2d7.863755492785964!3d46.7268618799276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478fbb5cd2dbf01b%3A0x5add102353264873!2sHohlg%C3%A4ssli%20367%2C%203804%20Habkern!5e0!3m2!1sde!2sch!4v1709938323894!5m2!1sde!2sch"
-              width="600"
-                height="450"
-                allowfullscreen=""
-                loading="lazy"
-              ></iframe>
-            </div>
-          </div>
-        </div>      
+<div class="{{ this_site.content_class }}">
+<h1 class="title">{{ this_site.title }}</h1>
+{# first row #}
+<div class="columns">
+  <div class="column is-half">
+    <h2 class="subtitle is-3">Adresse</h3>
+      <address class="content">
+        {{ personal.last_name }} {{ personal.first_name }} <br>
+        {{ personal.adress }} <br>
+        {{ personal.zip }} {{ personal.city }}
+      </address>
+      <img src="../assets/ntlnr.png" alt="Natel Nr" class="responsive-img mt-4 mb-1">
+      <br>
+      <a href="{{ this_site.mail_to}}" class="button is-link is-light py-2">E-mail schreiben</a>
+      <br>
+  </div>
+
+  <div class="column">
+    <h2 class="subtitle is-3 mb-0">Karte</h3>
+      <div class="google-maps">
+        <iframe 
+          src="{{ this_site.google_maps_url }}" 
+          title="Karte zur Praxis" 
+          loading="lazy" 
+          allowfullscreen> 
+        </iframe>
+      </div>
+  </div>
+</div>
+{# second row #}
+<h2 class="subtitle is-3">Anfahrt</h2>
+<div class="columns">
+  <div class="column is-half">
+    <h3 class="subtitle is-4">Öffentliche Verkehrsmittel</h3>
+    <p>
+      <strong>Postauto 106</strong> von <strong>Interlaken West</strong> nach <strong>Habkern Post</strong>.
+    </p>
+    <a href="https://www.öv-info.ch/sites/default/files/fap/{{ current_year() }}/pdf/31.106.pdf" target="_blank"
+      rel="noopener noreferrer" class="button is-warning">
+      Fahrplan {{ current_year() }} öffnen</a>
+  </div>
+  <div class="column">
+    <h3 class="subtitle is-4">Auto</h3>
+    <p>Parkplatz vorhanden (Bitte anfragen für Wegbeschreibung).</p>
+  </div>
+</div>
+</div>
 {% endblock content %}

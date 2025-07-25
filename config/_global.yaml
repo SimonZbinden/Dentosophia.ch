@@ -1,0 +1,36 @@
+personal:
+  first_name: "Pia"
+  last_name: "Kammer"
+  adress: "Hohlgässli 367b"
+  zip: "3804"
+  city: "Habkern"
+  city_nearby: "Interlaken"
+  canton: "Berner Oberland"
+  country: "Schweiz"
+  email: "info@dentosophia.ch"
+  jobs: ["Wegbegleitung", "Dentosophie", "Cranio-Sacral Therapie"]
+
+links:
+  dir: "../html"
+  impressum: "impressum.html"
+  dsb: "dsb.html"
+  index: "index.html"
+
+background_img:
+  alt: "Hintergrundbild"
+  class: "hero-background is-transparent"
+  dir: "../assets"
+  file: "flower-of-life.svg"
+
+website:
+  title: "Dentosophia"
+  language: "de-CH"
+  developer:
+    name: "Zbinden"
+    prename: "Simon Michael"
+    email: "none"
+
+this_site:
+  name: "none"
+  title: "No Title"
+  content_class: "hero-body is-fullheight has-background"

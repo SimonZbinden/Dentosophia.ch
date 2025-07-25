@@ -12,9 +12,11 @@ templates = [
     "dsb",
     "about",
     "kontakt",
-    "philosophie",
-    "dentosophie",
-    "cranio",
+    #"philosophie",
+    #"dentosophie",
+    #"cranio",
+    #"empty_body",
+    #"test",
     ]
 
 ### SET OUTPUT DIRECTORY ###
@@ -22,3 +24,7 @@ output_dir = Path('html/')
 
 ### RENDER HTML ###
 render_html(output_dir, configs_path, templates)
+
+
+### START VENV in powershell ###
+# & .venv/Scripts/Activate.ps1

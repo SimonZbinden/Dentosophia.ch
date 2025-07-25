@@ -1,5 +1,6 @@
 this_site:
   name: "impressum"
+  #content_class: "container mx-2"
 
 h1_title: "Impressum"
 h1_subtitle: "dentosophia.ch"

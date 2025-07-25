@@ -1,10 +1,25 @@
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> {{ website.title }} </title>
-        <link rel="icon" href="{{ static_url(dir='../assets', file='heart.ico') }}" />
-        <!-- css -->
-        <link rel="stylesheet" href="{{ static_url(dir='../css', file='bulma.css') }}">
-        <!-- navbar burger without js -->
-        <link rel="stylesheet" href="{{ static_url(dir='../css', file='bulma-css-burger.css') }}">
-        <!-- own style -->
-        <link rel="stylesheet" href="{{ static_url(dir='../css', file='dentosophia.css') }}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{# Dynamic SEO Tags -#}
+<title>{{ this_site.title | default(website.title) }} | {{ personal.last_name }} {{ personal.first_name }}</title>
+<meta name="description" content="{{ this_site.description | default(personal.jobs | join(', ') + ' in ' + personal.city + ', ' + personal.canton) }}">
+<meta name="keywords" content="{% for keyword in this_site.keywords | default(['dentosophie', personal.city, personal.canton]) %}{{ keyword }}{% if not loop.last %}, {% endif %}{% endfor %}">
+
+{# Open Graph -#}
+<meta property="og:title" content="{{ this_site.title | default(website.title) }}">
+<meta property="og:description" content="{{ this_site.description | default(personal.jobs | join(', ')) }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ this_site.url | default(links.dir + '/' + this_site.name + '.html') }}">
+<meta property="og:image" content="{{ this_site.image | default(static_url(dir='../assets', file='social-preview.jpg')) }}">
+
+{# Canonical -#}
+<link rel="canonical" href="{{ this_site.url | default(links.dir + '/' + this_site.name + '.html') }}">
+
+{# Favicon -#}
+<link rel="icon" href="{{ static_url(dir='../assets', file='heart.ico') }}">
+
+{# CSS -#}
+<link rel="stylesheet" href="{{ static_url(dir='../css', file='bulma.css') }}">
+<link rel="stylesheet" href="{{ static_url(dir='../css', file='bulma-css-burger.css') }}">
+<link rel="stylesheet" href="{{ static_url(dir='../css', file='dentosophia.css') }}">

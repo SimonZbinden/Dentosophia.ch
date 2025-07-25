@@ -5,6 +5,15 @@
  *  This source code is licensed under the BSD-style license found in the
  *  LICENSE file in the root directory of this source tree. 
  */
+
+/*
+ * Variables
+ */
+:root {
+  --custom-shadow: 5px 5px 20px rgb(73, 71, 41);
+  --custom-radius: 4px; /* matches Bulma's $radius */
+  --main-color-light: rgba(255, 215, 0, 0.1);
+}
  
 /*
 background image
@@ -15,27 +24,47 @@ background image
 }
 .hero-background {
   position: absolute;
-  object-fit: contain;
+  object-fit: cover; /* or: cover, contain, ... */
   object-position: center center;
+  pointer-events: none;   /* prevent interaction with the bg image */
   width: 100%;
   height: 100%;
 }
 .hero-background.is-transparent {
-  opacity: 0.3;
+  opacity: 0.1;
+}
+@media (max-width: 720px) {
+  .hero-background {
+    object-fit: cover; /* Prevents tiny SVG on mobile */
+  }
+}
+ /*
+  * Images
+  */
+/* Consistent image styling (matches map) */
+.image-card {
+  border-radius: var(--custom-radius);
+  box-shadow: var(--custom-shadow);
+  overflow: hidden;         /* Ensures radius clips image */
 }
 
 /*
  * customize nav bar
  */
- .navbar.is-warning {
-  background-color: rgba(255, 215, 0, 0.1);
+ .navbar.has-background-colour {
+  background-color: var(--main-color-light);
  }
+.navbar-burger {
+    color: var(--bulma-warning);
+ }
+
 
 /*
  * customize footer
  */
  .footer {
-  background-color: rgba(255, 215, 0, 0.1);
+  background-color: var(--main-color-light);
+  margin-top: auto;
  }
 
 /*
@@ -46,11 +75,11 @@ background image
 .google-maps {
   position: relative;
   padding-bottom: 75%; 
-  box-shadow: 5px 5px 20px rgb(73, 71, 41);
+  box-shadow: var(--custom-shadow);
   height: 0;
   overflow: hidden;
-  margin-left: 10%;
-  margin-right: 10%;
+  border-radius: var(--custom-radius);
+  margin: 1.5rem auto; /* consistent with Bulma's spacing */
 }
 .google-maps iframe {
   position: absolute;
@@ -58,6 +87,15 @@ background image
   left: 0;
   width: 100% !important;
   height: 100% !important;
+  border: 0; /* remove default iframe border */
+  filter: brightness(0.98); /* reduce glare */
+}
+@media screen and (max-width: 768px) {
+  .google-maps {
+    padding-bottom: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /*
@@ -75,6 +113,13 @@ background image
 .hyperlink{
   color: #120aee;
 }
+/* Auto-add to external links */
+a[target="_blank"]:not([href^="{{"])::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 0.25em;
+  font-size: 1em;
+}
 
 /*
  * justified text with auto hyphenation
@@ -87,6 +132,11 @@ background image
   -ms-hyphens: auto;         /* IE/Edge */
 
   hyphenate-limit-chars: 6 3 3; /* min-length before/after hyphen */
-  hyphenate-limit-lines: 2;      /* Max 2 consecutive hyphenated lines */
   overflow-wrap: break-word;     /* Emergency break */
+}
+
+address {
+  font-style: normal;
+  font-family: inherit; /* Uses the same font as the rest of the page */
+  line-height: 1.5; /* Match Bulma's default line height */
 }

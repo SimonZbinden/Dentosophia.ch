@@ -1,35 +1,47 @@
+# censored for usage with LLMs
+
 personal:
-  first_name: "Pia"
-  last_name: "Kammer"
-  adress: "Hohlgässli 367b"
-  zip: "3804"
-  city: "Habkern"
-  city_nearby: "Interlaken"
-  canton: "Berner Oberland"
+  first_name: "Maria"
+  last_name: "Mustermann"
+  adress: "Strasse 1a"
+  zip: "1234"
+  city: "Ortschaft"
+  city_nearby: "Umgebung"
+  canton: "Kanton"
   country: "Schweiz"
-  email: "info@dentosophia.ch"
-  jobs: ["Wegbegleitung", "Dentosophie", "Cranio-Sacral Therapie"]
+  email: "info@email.ch"
+  jobs: ["job1", "job2", "job3"]
 
 links:
   dir: "../html"
   impressum: "impressum.html"
   dsb: "dsb.html"
   index: "index.html"
+  about: "about.html"
+  kontakt: "kontakt.html"
+  
 
 background_img:
-  alt: "Hintergrundbild"
+  alt: ""
   class: "hero-background is-transparent"
-  dir: "../assets"
-  file: "flower-of-life.svg"
+  src: "../assets/flower-of-life.svg"
+  role: "img"         # alternative: presentation, ...
+  aria-hidden: "true"
+  loading: "lazy"
+  decoding: "async"   # browser decodes image in parallel. Good for png and svg.
 
 website:
-  title: "Dentosophia"
   language: "de-CH"
   developer:
-    name: "Zbinden"
-    prename: "Simon Michael"
+    name: "Schweizer"
+    prename: "Hans"
     email: "none"
 
 this_site:
   name: "none"
-  content_class: "hero-body is-fullheight has-background"
+  description: ""
+  keywords: ["Test1", "Test2", "Test3"]
+  main_class: "hero is-fullheight"
+  title: "None"
+  main_class: "section"
+  content_class: "container"

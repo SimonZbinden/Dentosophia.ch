@@ -2,20 +2,28 @@
 
 ## High Priority
 - [x] Renew Bulma CSS
-- [ ] Rewrite about.html.j2 template
+        -> Updated to 1.0.4
+- [x] Rewrite about.html.j2 template (only main content)
+    - choose structure an stick to it!
 - [ ] Approval from owner
     - No High Priority left!
+- [x] Rewrite Head and navbar (keep SEO in mind)
+- [ ] Design for Dark Mode
+- [ ] Colour Navbar items in CSS
 - [ ] 
 
 
 ## Mid Priority
-- [ ] Unit test
 - [ ] Structural Templates
     - e.g. 1, 2, ..., n rows
     - Ensure scalability
 - [ ] Multi language design
+- [ ] Switch from Dark to Light mode should be possible
 - [ ] setup Jinja Environment consistantly
     - maybe it is better to write functions into jinja_extensions.py? Or use macros wherever possible?
+    - eg how to implement background_img?
+- [x] Move navbar to head
+        -> Nope, stays in body
 - [ ] 
 
 ## Low Priority
