@@ -10,7 +10,8 @@
 - [x] Rewrite Head and navbar (keep SEO in mind)
 - [ ] Design for Dark Mode
 - [ ] Colour Navbar items in CSS
-- [ ] 
+- [ ] Fix Background_img
+    - atm it is only fullheight (cuts of)
 
 
 ## Mid Priority
