@@ -15,7 +15,7 @@ templates = [
     #"philosophie",
     #"dentosophie",
     #"cranio",
-    "empty_body",
+    #"empty_body",
     #"test",
     ]
 
@@ -26,5 +26,5 @@ output_dir = Path('html/')
 render_html(output_dir, configs_path, templates)
 
 
-### START VENV ###
-# & C:/Users/zbsi/Git/Dentosophia.ch/.venv/Scripts/Activate.ps1
+### START VENV in powershell ###
+# & .venv/Scripts/Activate.ps1
