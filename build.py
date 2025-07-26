@@ -12,7 +12,7 @@ templates = [
     "dsb",
     "about",
     "kontakt",
-    #"philosophie",
+    "kosten",
     "dentosophie",
     #"cranio",
     #"empty_body",
