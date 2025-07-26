@@ -121,15 +121,15 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
           <a class="navbar-item {% if this_site.name == 'about' %}is-active{% endif %}"
             href="{{ static_url(dir=links.dir, file=links.about) }}">Über mich</a>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">Dentosophie</a>
+            <a class="navbar-link {% if this_site.name == 'dentosophie' %} is-active {% endif %}" href="{{ static_url(dir=links.dir, file=links.dentosophie) }}">Dentosophie</a>
             <div class="navbar-dropdown">
-              <a class="navbar-item {% if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-overview') %}is-active{% endif %}"
+              <a class="navbar-item"
                 href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-overview">Überblick</a>
-              <a class="navbar-item {% if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-books') %}is-active{% endif %}"
+              <a class="navbar-item"
                 href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-books">Literatur</a>
-              <a class="navbar-item {% if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-offer') %}is-active{% endif %}"
+              <a class="navbar-item"
                 href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-offer">Angebot</a>
-              <a class="navbar-item {% if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-cost') %}is-active{% endif %}"
+              <a class="navbar-item"
                 href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-cost">Kosten</a>
             </div>
           </div>

@@ -28,13 +28,13 @@
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">Dentosophie</a>
         <div class="navbar-dropdown">
-          <a class="navbar-item {% if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-overview') %}is-active{% endif %}"
+          <a class="navbar-item {# if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-overview') %}is-active{% endif #}"
             href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-overview">Überblick</a>
-          <a class="navbar-item {% if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-books') %}is-active{% endif %}"
+          <a class="navbar-item {# if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-books') %}is-active{% endif #}"
             href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-books">Literatur</a>
-          <a class="navbar-item {% if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-offer') %}is-active{% endif %}"
+          <a class="navbar-item {# if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-offer') %}is-active{% endif #}"
             href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-offer">Angebot</a>
-          <a class="navbar-item {% if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-cost') %}is-active{% endif %}"
+          <a class="navbar-item {# if this_site.name == 'dentosophie' and request.url.endswith('#dentosophie-cost') %}is-active{% endif #}"
             href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-cost">Kosten</a>
         </div>
       </div>
