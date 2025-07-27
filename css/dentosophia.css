@@ -11,25 +11,31 @@
  */
 :root {
   --custom-shadow: 5px 5px 20px rgb(73, 71, 41);
-  --custom-radius: 4px; /* matches Bulma's $radius */
+  --custom-radius: 4px;
+  /* matches Bulma's $radius */
   --main-color-light: rgba(255, 215, 0, 0.1);
 }
+
+
+
 /* --- Background Image --- */
 .hero-background {
-  position: fixed; /* Changed from absolute */
+  position: fixed;
+  /* Changed from absolute */
   top: 0;
   left: 0;
-  width: 100vw; /* Changed from 100% */
-  height: 100vh; /* Changed from 100% */
-  object-fit: cover; /* Ensure coverage, 'contain' might leave borders */
+  width: 100vw;
+  /* Changed from 100% */
+  height: 100vh;
+  /* Changed from 100% */
+  object-fit: cover;
+  /* Ensure coverage, 'contain' might leave borders */
   object-position: center center;
-  pointer-events: none; /* prevent interaction */
-  z-index: -1; /* Ensure it's behind all other content */
+  pointer-events: none;
+  /* prevent interaction */
+  z-index: -1;
+  /* Ensure it's behind all other content */
   /* Opacity is handled by the 'is-transparent' class or can be added here if needed universally */
-}
-
-.hero-background.is-transparent {
-  opacity: 0.1; /* Confirmed */
 }
 
 /* Keep mobile adjustment if necessary */
@@ -65,34 +71,36 @@ background image (old rules)
 }
 */
 
- /*
+/*
   * Images
   */
 /* Consistent image styling (matches map) */
 .image-card {
   border-radius: var(--custom-radius);
   box-shadow: var(--custom-shadow);
-  overflow: hidden;         /* Ensures radius clips image */
+  overflow: hidden;
+  /* Ensures radius clips image */
 }
 
 /*
  * customize nav bar
  */
- .navbar.has-background-colour {
+.navbar.has-background-colour {
   background-color: var(--main-color-light);
- }
+}
+
 .navbar-burger {
-    color: var(--bulma-warning);
- }
+  color: var(--bulma-warning);
+}
 
 
 /*
  * customize footer
  */
- .footer {
+.footer {
   background-color: var(--main-color-light);
   margin-top: auto;
- }
+}
 
 /*
  * responsive google maps
@@ -101,22 +109,27 @@ background image (old rules)
  */
 .google-maps {
   position: relative;
-  padding-bottom: 75%; 
+  padding-bottom: 75%;
   box-shadow: var(--custom-shadow);
   height: 0;
   overflow: hidden;
   border-radius: var(--custom-radius);
-  margin: 1.5rem auto; /* consistent with Bulma's spacing */
+  margin: 1.5rem auto;
+  /* consistent with Bulma's spacing */
 }
+
 .google-maps iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100% !important;
   height: 100% !important;
-  border: 0; /* remove default iframe border */
-  filter: brightness(0.98); /* reduce glare */
+  border: 0;
+  /* remove default iframe border */
+  filter: brightness(0.98);
+  /* reduce glare */
 }
+
 @media screen and (max-width: 768px) {
   .google-maps {
     padding-bottom: 100%;
@@ -128,23 +141,25 @@ background image (old rules)
 /*
  * hide mobile number behind img
  */
- .responsive-img{
+.responsive-img {
   width: 100%;
   max-width: 110px;
   height: auto;
- }
- /* Custom image size */
+}
+
+/* Custom image size */
 .image.is-192x192 {
   width: 192px;
   height: 192px;
 }
 
- /*
+/*
   * hyperlinks
   */
-.hyperlink{
+.hyperlink {
   color: #120aee;
 }
+
 /* Auto-add to external links */
 a[target="_blank"]:not([href^="{{"])::after {
   content: "↗";
@@ -158,17 +173,24 @@ a[target="_blank"]:not([href^="{{"])::after {
  */
 .text-is-justified {
   text-align: justify;
-  text-justify: inter-word;  /* Better than 'auto' */
+  text-justify: inter-word;
+  /* Better than 'auto' */
   hyphens: auto;
-  -webkit-hyphens: auto;     /* Safari */
-  -ms-hyphens: auto;         /* IE/Edge */
+  -webkit-hyphens: auto;
+  /* Safari */
+  -ms-hyphens: auto;
+  /* IE/Edge */
 
-  hyphenate-limit-chars: 6 3 3; /* min-length before/after hyphen */
-  overflow-wrap: break-word;     /* Emergency break */
+  hyphenate-limit-chars: 6 3 3;
+  /* min-length before/after hyphen */
+  overflow-wrap: break-word;
+  /* Emergency break */
 }
 
 address {
   font-style: normal;
-  font-family: inherit; /* Uses the same font as the rest of the page */
-  line-height: 1.5; /* Match Bulma's default line height */
+  font-family: inherit;
+  /* Uses the same font as the rest of the page */
+  line-height: 1.5;
+  /* Match Bulma's default line height */
 }

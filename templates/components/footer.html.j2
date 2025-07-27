@@ -1,7 +1,7 @@
 <footer class="footer">
   <div class="columns is-vcentered">
     <!-- Left-aligned content -->
-    <div class="column is-8 has-text-centered">
+    <div class="column is-7 has-text-centered">
       {% for job in personal.jobs -%}
       <strong>{{ job }}</strong>{% if loop.revindex0 == 1 %} und {% elif not loop.last %}, {% endif %}
       {%- endfor %}
@@ -12,7 +12,7 @@
     </div>
 
     <!-- Right-aligned links -->
-    <div class="column has-text-right">
+    <div class="column has-text-right is-4-tablet">
       <div class="is-inline-block">
         <a href="{{ static_url(dir=links.dir, file=links.impressum) }}" class="hyperlink has-text-link" {% if
           this_site.name=='impressum' %}>

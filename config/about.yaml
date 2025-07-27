@@ -4,4 +4,8 @@ this_site:
   tab_title: "Über mich"
   main_class: "section"
 
+background_img:
+  src: "../assets/nature/photo_3_2025-07-08_07-45-46.jpg"
+  style: "opacity: 0.2;"
+
 #background_img: false

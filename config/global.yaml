@@ -28,6 +28,7 @@ links:
 background_img:
   alt: ""
   class: "hero-background is-transparent"
+  style: "opacity: 0.1;"
   src: "../assets/flower-of-life.svg"
   role: "img"         # alternative: presentation, ...
   aria-hidden: "true"

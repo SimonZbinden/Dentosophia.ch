@@ -3,3 +3,7 @@ this_site:
   title: "Kontakt"
   mail_to: "mailto:piapia%40gmx.ch?subject=Dentosophie&amp;body=Liebe%20Pia%20Kammer"
   google_maps_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1367.4645002772993!2d7.863755492785964!3d46.7268618799276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478fbb5cd2dbf01b%3A0x5add102353264873!2sHohlg%C3%A4ssli%20367%2C%203804%20Habkern!5e0!3m2!1sde!2sch!4v1709938323894!5m2!1sde!2sch"
+
+background_img:
+  src: "../assets/nature/photo_17_2025-07-08_07-45-46.jpg"
+  style: "opacity: 0.2;"
