@@ -14,6 +14,7 @@ templates = [
     "kontakt",
     "kosten",
     "dentosophie",
+    'material',
     #"cranio",
     #"empty_body",
     #"test",
