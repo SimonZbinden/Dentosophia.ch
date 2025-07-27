@@ -18,6 +18,7 @@ templates = [
     #"cranio",
     #"empty_body",
     #"test",
+    "bulma",
     ]
 
 ### SET OUTPUT DIRECTORY ###

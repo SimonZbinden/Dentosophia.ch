@@ -29,7 +29,7 @@ Copyright (c) {{ current_year() }}, {{ website.developer.name }} {{ website.deve
     </div>
 
     <!-- Content in hero-body -->
-    <main class="hero-body">
+    <main {% if this_site.main_class %} class="{{ this_site.main_class }}" {% endif %}>
       {%- filter indent(width=6) %}
       {% block content %}No content found!{% endblock %}
       {%- endfilter %}

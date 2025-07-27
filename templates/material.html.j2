@@ -1,50 +1,137 @@
 {% extends "base.html.j2" %}
 
 {% block content %}
-<div class="{{ this_site.content_class }}">
-  <h1 class="title is-spaced">{{ this_site.title }}</h1>
-  <div class="columns is-vcentred">
-    <h2 class="subtitle">Balancer</h2>
-    <div class="column is-two-thirds">
-      <p class="text-is-justified">
-        Der <i>Balancer</i> (oder <i>Actismile</i> - je nach Hersteller wird es anders genannt), ist das Trainingsgerät
-        in der Dentosophie.<br>
-        Mit dem Balancer wird der Lippenschluss geübt und dadurch die Nasenatmung aktiviert, welche den Körper perfekt
-        mit Sauerstoff versorgt. Die richtige Zungenruhelage, das physiologische Schlucken und der korrekte Schluckakt
-        wird trainiert und sorgt so für ein gutes Kieferwachstum, was zudem wichtig ist für die Entspannung der
-        Kaumuskulatur und der ausgeglichenen Unterkieferposition.<br>
-        Auch die ausgewogene Muskelarbeit, durch beidseitiges federndes Kauen, sorgt für eine Entspannung der
-        Kiefergelenke, der Kiefer-, Gesichts- und Nackenmuskulatur und führt letztendlich zu einer ausgewogenen
-        Körperhaltung. Bei Verdauungsproblemen kann eine Fehlfunktion des Kiefers oder der Kaumuskulatur eine Rolle
-        spielen. Wird der Balancer bereits im Kindesalter eingesetzt, wird das Kieferwachstum so stimuliert, dass oft
-        eine klassische Zahnspange vermieden werden kann.
-      </p>
-    </div>
-    <div class="column">
-      Platzhalter
-    </div>
+
+{# H1 TITLE #}
+<div class="container has-text-centered mb-6">
+  <h1 class="title mx-auto">{{ this_site.title }}</h1>
+</div>
+
+{# ROW #}
+<div class="columns is-vcentered">
+  <div class="column is-8">
+    <h2 class="subtitle is-3" id="balancer">Balancer</h2>
+    <p class="text-is-justified">
+      Der <i>Balancer</i> (oder <i>Actismile</i> - je nach Hersteller wird es anders genannt), ist das
+      Trainingsgerät
+      in der Dentosophie.<br>
+      Mit dem Balancer wird der Lippenschluss geübt und dadurch die Nasenatmung aktiviert, welche den Körper perfekt
+      mit Sauerstoff versorgt. Die richtige Zungenruhelage, das physiologische Schlucken und der korrekte Schluckakt
+      wird trainiert und sorgt so für ein gutes Kieferwachstum, was zudem wichtig ist für die Entspannung der
+      Kaumuskulatur und der ausgeglichenen Unterkieferposition.<br>
+      Auch die ausgewogene Muskelarbeit, durch beidseitiges federndes Kauen, sorgt für eine Entspannung der
+      Kiefergelenke, der Kiefer-, Gesichts- und Nackenmuskulatur und führt letztendlich zu einer ausgewogenen
+      Körperhaltung. Bei Verdauungsproblemen kann eine Fehlfunktion des Kiefers oder der Kaumuskulatur eine Rolle
+      spielen. Wird der Balancer bereits im Kindesalter eingesetzt, wird das Kieferwachstum so stimuliert, dass oft
+      eine klassische Zahnspange vermieden werden kann.
+    </p>
   </div>
   <div class="column">
-    <h2 class="subtitle">Literatur Dentosophie</h2>
-    <p>
-      Vor einer Kontaktaufnahme oder der ersten Besprechung würde ich Ihnen empfehlen, eines der nachfolgenden Bücher zu
+    <figure class="image is-192x192 mx-auto">
+      <img class="is-rounded" src="{{ static_url(dir=figures.dir, file=figures.balancer)}}" />
+    </figure>
+  </div>
+</div>
+{# ROW #}
+<div class="columns is-vcentered mt-6">
+  <div class="column">
+    <h2 class="subtitle is-3">Literatur Dentosophie</h2>
+    <p class="text-is-justified">
+      Vor einer Kontaktaufnahme oder der ersten Besprechung würde ich Ihnen empfehlen, eines der nachfolgenden Bücher
+      zu
       lesen. Es
-      muss nicht vollständig durchgelesen sein, doch als kurze Lektüre im Bad, beim Esstisch oder auf dem Nachtisch kann
+      muss nicht vollständig durchgelesen sein, doch als kurze Lektüre im Bad, beim Esstisch oder auf dem Nachtisch
+      kann
       man dieses immer
       wieder mal aufschlagen und in die Welt der Dentosophie eintauchen.
     </p>
-    <div class="columns is-mobile">
-      <div class="column">
-        <p>
-          Buch 1
+  </div>
+</div>
+{# Text / Img #}
+<div class="container has-text-centered mt-4 mb-1">
+  <h3 class="subtitle is-4">Dentosophie - Die Magie der Mundhöhle</h3>
+</div>
+<div class="columns is-vcentered mb-8">
+  <div class="column is-7 is-offset-1-tablet">
+    {# Quote Box #}
+    <div class="box has-background-light mb-5">
+      <blockquote class="is-relative">
+        <p class="is-italic is-size-5 has-text-grey-dark mb-4">
+          „In diesem Buch geht es um die historische Entwicklung, die dentosophische Philosophie und um die konkreten
+          Schritte in der dentosophischen Behandlung für Ärzte und Laien gleichermaßen.“
         </p>
-      </div>
-      <div class="column">
-        <figure class="image is-128x128">
-          <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
-        </figure>
-      </div>
+        <footer class="has-text-right has-text-grey">
+          — Dr. med. dent. Silke Waggerhauser, Autorin
+        </footer>
+      </blockquote>
     </div>
+    {# Book Info Table #}
+    <div class="table-container">
+      <table class="table is-fullwidth is-striped">
+        <tbody>
+          <tr>
+            <th class="has-text-weight-semibold">ISBN-13</th>
+            <td>978-3982685830</td>
+          </tr>
+          <tr>
+            <th class="has-text-weight-semibold">Kaufen</th>
+            <td>
+              <a href="https://www.dentosophie-shop.de/produkt/buch" class="has-text-link" target="_blank"
+                rel="noopener noreferrer">
+                dentosophie-shop.de
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="column is-6-mobile is-4-tablet is-offset-3-mobile">
+    <figure class="image is-3by4">
+      <img src="{{ static_url(dir=figures.dir, file=figures.buch1)}}" />
+    </figure>
+  </div>
+</div>
+{# Text / Img #}
+<div class="container has-text-centered mt-4 mb-1">
+  <h3 class="subtitle is-4">Unsere Zähne - Ein Tor zur Gesundheit</h3>
+</div>
+<div class="columns is-vcentered mb-8">
+  <div class="column is-7 is-offset-1-tablet">
+    {# Quote Box #}
+    <div class="box has-background-light mb-5">
+        <p class="has-text-justified is-size-5 has-text-grey-dark mb-4">
+          Nach 35 Jahren Erfahrung und eindrücklichen klinischen Resultaten zeigt der Autor mit diesem Buch anhand
+          zahlreicher Fallbeispiele und Fotos auf, dass dieser humanistische Therapieansatz im Bereich des Mundes und
+          der Zähne das aussergewöhnliche Heilungspotenzial unseres Körpers stimuliert, und zwar in jedem Alter.
+        </p>
+      </blockquote>
+    </div>
+    {# Book Info Table #}
+    <div class="table-container">
+      <table class="table is-fullwidth is-striped">
+        <tbody>
+          <tr>
+            <th class="has-text-weight-semibold">ISBN-13</th>
+            <td>978-3907246481</td>
+          </tr>
+          <tr>
+            <th class="has-text-weight-semibold">Kaufen</th>
+            <td>
+              <a href="https://www.orellfuessli.ch/shop/home/artikeldetails/A1059790007" class="has-text-link"
+                target="_blank" rel="noopener noreferrer">
+                orellfuessli.ch
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="column is-6-mobile is-4-tablet is-offset-3-mobile">
+    <figure class="image is-3by4">
+      <img src="{{ static_url(dir=figures.dir, file=figures.buch2)}}" />
+    </figure>
   </div>
 </div>
 {% endblock content %}

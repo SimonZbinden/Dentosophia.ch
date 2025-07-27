@@ -1,8 +1,11 @@
 this_site:
   name: "material"
   title: "Hilfsmittel und Literaturempfehlungen"
-  content_class: "columns"
+  content_class: "columns is-multiline"
+  main_class: "section"
 
 figures:
   dir: '../assets/books'
-  buch1: ""
+  buch1: "die_magie_der_Mundhoehle.png"
+  buch2: "dentosophie_unsere_zaehne-ein_tor_zur_gesundheit.png"
+  balancer: "dentosophie-balancer.jpg"

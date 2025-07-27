@@ -19,6 +19,8 @@ links:
   index: "index.html"
   about: "about.html"
   kontakt: "kontakt.html"
+  material: "material.html"
+  kosten: "kosten.html"
   
 
 background_img:
@@ -41,7 +43,7 @@ this_site:
   name: "none"
   description: ""
   keywords: ["Test1", "Test2", "Test3"]
-  main_class: "hero is-fullheight"
+  main_class: "hero-body"
   title: "None"
   main_class: "section"
   content_class: "container"
