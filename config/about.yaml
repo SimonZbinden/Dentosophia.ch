@@ -1,6 +1,7 @@
 this_site:
-  name: "about" # has to match name of the page!
+  name: "about"
   title: "Ein wenig über mich"
-  tab_title: "Über mich"    # replaces 'title' in the HTML head
+  tab_title: "Über mich"
+  main_class: "section"
 
 #background_img: false
