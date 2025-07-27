@@ -1,3 +1,8 @@
 this_site:
   name: "material"
   title: "Hilfsmittel und Literaturempfehlungen"
+  content_class: "columns"
+
+figures:
+  dir: '../assets/books'
+  buch1: ""
