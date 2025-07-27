@@ -14,19 +14,44 @@
   --custom-radius: 4px; /* matches Bulma's $radius */
   --main-color-light: rgba(255, 215, 0, 0.1);
 }
- 
+/* --- Background Image --- */
+.hero-background {
+  position: fixed; /* Changed from absolute */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Changed from 100% */
+  height: 100vh; /* Changed from 100% */
+  object-fit: cover; /* Ensure coverage, 'contain' might leave borders */
+  object-position: center center;
+  pointer-events: none; /* prevent interaction */
+  z-index: -1; /* Ensure it's behind all other content */
+  /* Opacity is handled by the 'is-transparent' class or can be added here if needed universally */
+}
+
+.hero-background.is-transparent {
+  opacity: 0.1; /* Confirmed */
+}
+
+/* Keep mobile adjustment if necessary */
+@media (max-width: 720px) {
+  .hero-background {
+    object-fit: cover;
+  }
+}
+
 /*
-background image
-*/
+background image (old rules)
+* /
+/*
 .hero-body.has-background {
   position: relative;
   overflow: hidden;
 }
 .hero-background {
   position: absolute;
-  object-fit: cover; /* or: cover, contain, ... */
+  object-fit: contain;
   object-position: center center;
-  pointer-events: none;   /* prevent interaction with the bg image */
+  pointer-events: none;
   width: 100%;
   height: 100%;
 }
@@ -35,9 +60,11 @@ background image
 }
 @media (max-width: 720px) {
   .hero-background {
-    object-fit: cover; /* Prevents tiny SVG on mobile */
+    object-fit: cover;
   }
 }
+*/
+
  /*
   * Images
   */

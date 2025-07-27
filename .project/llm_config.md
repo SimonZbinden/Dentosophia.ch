@@ -102,13 +102,17 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
 - **Current navbar.html.j2 file**:
     ```html
     <nav class="navbar has-background-colour has-shadow" role="navigation" aria-label="main navigation">
+      <!-- Hidden checkbox for CSS toggle logic - must be a sibling of .navbar-menu -->
       <input type="checkbox" id="navbar-burger-toggle" class="navbar-burger-toggle is-hidden">
+
       <div class="navbar-brand">
         <a class="navbar-item {% if this_site.name == 'index' %}is-active{% endif %}"
           href="{{ static_url(dir=links.dir, file=links.index) }}">
           <img class="py-2 px-2" style="max-height: 60px;"
             src="{{ static_url(dir='../assets/', file='logo_dentosophia_klein2.png') }}" alt="Logo">
         </a>
+
+        <!-- Visible burger icon, linked to the hidden checkbox above -->
         <label for="navbar-burger-toggle" class="navbar-burger">
           <span></span>
           <span></span>
@@ -116,27 +120,39 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
           <span></span> <!-- Extra span for visual styling -->
         </label>
       </div>
+
+      <!-- navbar-menu must be a sibling to the checkbox for the CSS ~ selector -->
       <div class="navbar-menu">
         <div class="navbar-start">
+          <!-- Apply is-active based on this_site.name -->
           <a class="navbar-item {% if this_site.name == 'about' %}is-active{% endif %}"
             href="{{ static_url(dir=links.dir, file=links.about) }}">Über mich</a>
+
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link {% if this_site.name == 'dentosophie' %} is-active {% endif %}" href="{{ static_url(dir=links.dir, file=links.dentosophie) }}">Dentosophie</a>
+            <a class="navbar-link {% if this_site.name == 'dentosophie' %}is-active{% endif %}"
+              href="{{ static_url(dir=links.dir, file=links.dentosophie) }}">Dentosophie</a>
             <div class="navbar-dropdown">
-              <a class="navbar-item"
-                href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-overview">Überblick</a>
-              <a class="navbar-item"
-                href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-books">Literatur</a>
-              <a class="navbar-item"
-                href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-offer">Angebot</a>
-              <a class="navbar-item"
-                href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#dentosophie-cost">Kosten</a>
+              <a class="navbar-item" href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#about">Überblick</a>
+              <a class="navbar-item" href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#when">Symptome</a>
+              <a class="navbar-item" href="{{ static_url(dir=links.dir, file=links.dentosophie) }}#offer">Angebot</a>
             </div>
           </div>
+          <a class="navbar-item {% if this_site.name == 'cranio' %}is-active{% endif %}"
+            href="{{ static_url(dir=links.dir, file=links.cranio) }}">Kranio-Sakral Therapie</a>
         </div>
+        <!-- start: on the right -->
         <div class="navbar-end">
+          <a class="navbar-item {% if this_site.name == 'kosten' %}is-active{% endif %}"
+            href="{{ static_url(dir=links.dir, file=links.kosten)}}">Kosten</a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-item {% if this_site.name == 'material' %}is-active{% endif %}"
+              href="{{ static_url(dir=links.dir, file=links.material)}}">Hilfsmittel</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="{{ static_url(dir=links.dir, file=links.material) }}#balancer">Balancer</a>
+              <a class="navbar-item" href="{{ static_url(dir=links.dir, file=links.material) }}#books">Bücher</a>
+            </div>
           <a class="navbar-item {% if this_site.name == 'kontakt' %}is-active{% endif %}"
-            href="{{ static_url(dir='../html', file='kontakt.html')}}">Karte / Kontakt</a>
+            href="{{ static_url(dir=links.dir, file=links.kontakt)}}">Karte / Kontakt</a>
         </div>
       </div>
     </nav>
