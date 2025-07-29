@@ -138,7 +138,7 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
             </div>
           </div>
           <a class="navbar-item {% if this_site.name == 'cranio' %}is-active{% endif %}"
-            href="{{ static_url(dir=links.dir, file=links.cranio) }}">Kranio-Sakral Therapie</a>
+            href="{{ static_url(dir=links.dir, file=links.cranio) }}">Craniosacral Therapie</a>
         </div>
         <!-- start: on the right -->
         <div class="navbar-end">

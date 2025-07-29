@@ -1,17 +1,19 @@
+# censored for usage with LLMs
+
 personal:
-  first_name: "Pia"
-  last_name: "Kammer"
-  adress: "Hohlgässli 367b"
-  zip: "3804"
-  city: "Habkern"
-  city_nearby: "Interlaken"
-  canton: "Berner Oberland"
+  first_name: "Maria"
+  last_name: "Mustermann"
+  adress: "Strasse 1a"
+  zip: "1234"
+  city: "Ortschaft"
+  city_nearby: "Umgebung"
+  canton: "Kanton"
   country: "Schweiz"
-  email: "info@dentosophia.ch"
-  jobs: ["Wegbegleitung", "Dentosophie", "Cranio-Sacral Therapie"]
+  email: "info@email.ch"
+  jobs: ["job1", "job2", "job3"]
 
 links:
-  dir: ""
+  dir: "../html"
   impressum: "impressum.html"
   dsb: "dsb.html"
   index: "index.html"
@@ -21,6 +23,7 @@ links:
   kosten: "kosten.html"
   dentosophie: "dentosophie.html"
   cranio: "cranio.html"
+  
 
 background_img:
   alt: ""
@@ -33,11 +36,10 @@ background_img:
   decoding: "async"   # browser decodes image in parallel. Good for png and svg.
 
 website:
-  title: "Dentosophia"
   language: "de-CH"
   developer:
-    name: "Zbinden"
-    prename: "Simon Michael"
+    name: "Schweizer"
+    prename: "Hans"
     email: "none"
 
 this_site:
