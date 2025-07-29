@@ -69,34 +69,38 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
 - **Current base.html.j2 file**:  
     ```html
     <!DOCTYPE html>
-    <html lang="{{ website.language }}">
-      <head>
-        {%- filter indent(width=2) %}
-        {% include "components/header.html.j2" %}
-        {%- endfilter %}
-      </head>
-      <body>
-        {%- if background_img %}
-        <img {%- for attr, val in background_img.items() %} {{ attr }}="{{ val }}" {%- endfor %} />
-        {%- endif -%}
-        <section class="hero is-fullheight">
-          <div class="hero-head">
-            {%- filter indent(width=6) %}
-            {% include "components/navbar.html.j2" %}
-            {%- endfilter %}
-          </div>
-          <main class="hero-body">
-            {%- filter indent(width=6) %}
-            {% block content %}No content found!{% endblock %}
-            {%- endfilter %}
-          </main>
-          <div class="hero-foot">
-            {%- filter indent(width=6) %}
-            {% include "components/footer.html.j2" %}
-            {%- endfilter %}
-          </div>
-        </section>
-      </body>
+    <html lang="{{ website.language }}" data-theme="light">
+    <head>
+      {%- filter indent(width=2) %}
+      {% include "components/header.html.j2" %}
+      {%- endfilter %}
+    </head>
+    <body>
+      {%- if background_img %}
+      <!-- Background Image -->
+      <img {%- for attr, val in background_img.items() %} {{ attr }}="{{ val }}" {%- endfor %} />
+      {%- endif -%}
+      <section class="hero is-fullheight">
+        <!-- Navbar inside hero-head -->
+        <div class="hero-head">
+          {%- filter indent(width=6) %}
+          {% include "components/navbar.html.j2" %}
+          {%- endfilter %}
+        </div>
+        <!-- Content in hero-body -->
+        <main {% if this_site.main_class %} class="{{ this_site.main_class }}" {% endif %}>
+          {%- filter indent(width=6) %}
+          {% block content %}No content found!{% endblock %}
+          {%- endfilter %}
+        </main>
+        <!-- Footer inside hero-foot -->
+        <div class="hero-foot">
+          {%- filter indent(width=6) %}
+          {% include "components/footer.html.j2" %}
+          {%- endfilter %}
+        </div>
+      </section>
+    </body>
     </html>
     ```
 - **Current navbar.html.j2 file**:
@@ -104,14 +108,12 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
     <nav class="navbar has-background-colour has-shadow" role="navigation" aria-label="main navigation">
       <!-- Hidden checkbox for CSS toggle logic - must be a sibling of .navbar-menu -->
       <input type="checkbox" id="navbar-burger-toggle" class="navbar-burger-toggle is-hidden">
-
       <div class="navbar-brand">
         <a class="navbar-item {% if this_site.name == 'index' %}is-active{% endif %}"
           href="{{ static_url(dir=links.dir, file=links.index) }}">
           <img class="py-2 px-2" style="max-height: 60px;"
             src="{{ static_url(dir='../assets/', file='logo_dentosophia_klein2.png') }}" alt="Logo">
         </a>
-
         <!-- Visible burger icon, linked to the hidden checkbox above -->
         <label for="navbar-burger-toggle" class="navbar-burger">
           <span></span>
@@ -120,14 +122,12 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
           <span></span> <!-- Extra span for visual styling -->
         </label>
       </div>
-
       <!-- navbar-menu must be a sibling to the checkbox for the CSS ~ selector -->
       <div class="navbar-menu">
         <div class="navbar-start">
           <!-- Apply is-active based on this_site.name -->
           <a class="navbar-item {% if this_site.name == 'about' %}is-active{% endif %}"
             href="{{ static_url(dir=links.dir, file=links.about) }}">Über mich</a>
-
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link {% if this_site.name == 'dentosophie' %}is-active{% endif %}"
               href="{{ static_url(dir=links.dir, file=links.dentosophie) }}">Dentosophie</a>
@@ -166,30 +166,28 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
     ```css
     :root {
       --custom-shadow: 5px 5px 20px rgb(73, 71, 41);
-      --custom-radius: 4px; /* matches Bulma's $radius */
+      --custom-radius: 4px;
+      /* matches Bulma's $radius */
       --main-color-light: rgba(255, 215, 0, 0.1);
     }
-    /*
-    background image
-    */
-    .hero-body.has-background {
-      position: relative;
-      overflow: hidden;
-    }
+    /* --- Background Image --- */
     .hero-background {
-      position: absolute;
-      object-fit: contain;
+      position: fixed;
+      /* Changed from absolute */
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
       object-position: center center;
-      pointer-events: none;   /* prevent interaction with the bg image */
-      width: 100%;
-      height: 100%;
+      pointer-events: none;
+      z-index: -5;
     }
-    .hero-background.is-transparent {
-      opacity: 0.1;
-    }
+
+    /* Keep mobile adjustment if necessary */
     @media (max-width: 720px) {
       .hero-background {
-        object-fit: cover; /* Prevents tiny SVG on mobile */
+        object-fit: cover;
       }
     }
     /*
@@ -199,14 +197,21 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
     .image-card {
       border-radius: var(--custom-radius);
       box-shadow: var(--custom-shadow);
-      overflow: hidden;         /* Ensures radius clips image */
+      overflow: hidden;
+      /* Ensures radius clips image */
     }
+
     /*
     * customize nav bar
     */
-    .navbar.is-warning {
+    .navbar.has-background-colour {
       background-color: var(--main-color-light);
     }
+
+    .navbar-burger {
+      color: var(--bulma-warning);
+    }
+
     /*
     * customize footer
     */
@@ -214,6 +219,7 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
       background-color: var(--main-color-light);
       margin-top: auto;
     }
+
     /*
     * responsive google maps
     * thanks to Amit Agarwal:
@@ -221,12 +227,13 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
     */
     .google-maps {
       position: relative;
-      padding-bottom: 75%; 
+      padding-bottom: 75%;
       box-shadow: var(--custom-shadow);
       height: 0;
       overflow: hidden;
       border-radius: var(--custom-radius);
-      margin: 1.5rem auto; /* consistent with Bulma's spacing */
+      margin: 1.5rem auto;
+      /* consistent with Bulma's spacing */
     }
     .google-maps iframe {
       position: absolute;
@@ -234,8 +241,10 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
       left: 0;
       width: 100% !important;
       height: 100% !important;
-      border: 0; /* remove default iframe border */
-      filter: brightness(0.98); /* reduce glare */
+      border: 0;
+      /* remove default iframe border */
+      filter: brightness(0.98);
+      /* reduce glare */
     }
     @media screen and (max-width: 768px) {
       .google-maps {
@@ -244,18 +253,24 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
         margin-right: 0;
       }
     }
+
     /*
-    * hide mobile number behind img
+    * image handlers
     */
-    .responsive-img{
+    .responsive-img {
       width: 100%;
       max-width: 110px;
       height: auto;
     }
+    .image.is-192x192 {
+      width: 192px;
+      height: 192px;
+    }
+
     /*
       * hyperlinks
       */
-    .hyperlink{
+    .hyperlink {
       color: #120aee;
     }
     /* Auto-add to external links */
@@ -265,25 +280,24 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
       margin-left: 0.25em;
       font-size: 1em;
     }
+
     /*
     * justified text with auto hyphenation
     */
     .text-is-justified {
       text-align: justify;
-      text-justify: inter-word;  /* Better than 'auto' */
+      text-justify: inter-word; /* Better than 'auto' */
       hyphens: auto;
-      -webkit-hyphens: auto;     /* Safari */
-      -ms-hyphens: auto;         /* IE/Edge */
+      -webkit-hyphens: auto; /* Safari */
+      -ms-hyphens: auto; /* IE/Edge */
       hyphenate-limit-chars: 6 3 3; /* min-length before/after hyphen */
-      overflow-wrap: break-word;     /* Emergency break */
+      overflow-wrap: break-word; /* Emergency break */
     }
+
     address {
       font-style: normal;
       font-family: inherit; /* Uses the same font as the rest of the page */
       line-height: 1.5; /* Match Bulma's default line height */
-    }
-    .navbar-burger-toggle:checked ~ .navbar-menu {
-      display: block !important;  /* Force show menu */
     }
     ```
 
@@ -307,15 +321,24 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
     impressum: "impressum.html"
     dsb: "dsb.html"
     index: "index.html"
+    about: "about.html"
+    kontakt: "kontakt.html"
+    material: "material.html"
+    kosten: "kosten.html"
+    dentosophie: "dentosophie.html"
+    cranio: "cranio.html"
 
   background_img:
-    alt: "Hintergrundbild"
+    alt: ""
     class: "hero-background is-transparent"
-    dir: "../assets"
-    file: "flower-of-life.svg"
+    style: "opacity: 0.1;"
+    src: "../assets/flower-of-life.svg"
+    role: "img"         # alternative: presentation, ...
+    aria-hidden: "true"
+    loading: "lazy"
+    decoding: "async"   # browser decodes image in parallel. Good for png and svg.
 
   website:
-    title: "Arbeitstitel"
     language: "de-CH"
     developer:
       name: "Schweizer"
@@ -324,16 +347,24 @@ The website is build written in HTML and CSS. No Javascript! We use Jinja2 as a 
 
   this_site:
     name: "none"
-    title: "No Title"
+    description: ""
+    keywords: ["Test1", "Test2", "Test3"]
+    main_class: "hero-body"
+    title: "None"
     main_class: "section"
-    content_class: "hero-body is-fullheight has-background"
+    content_class: "container"
 ```
 **Current about.yaml file:**
   ```yaml
   this_site:
     name: "about"   # overwrites this_site.name in global.yaml (deep merge logic in Python)
     title: "Ein wenig über mich"
-    tab_title: "Über mich" 
+    tab_title: "Über mich"
+    main_class: "section"
+
+  background_img:
+    style: "opacity: 0.2;"
+    src: "../assets/nature/photo_3_2025-07-08_07-45-46.jpg"
   ```
 ---
 

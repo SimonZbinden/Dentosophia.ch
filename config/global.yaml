@@ -11,7 +11,7 @@ personal:
   jobs: ["Wegbegleitung", "Dentosophie", "Cranio-Sacral Therapie"]
 
 links:
-  dir: ""
+  dir: "../html"
   impressum: "impressum.html"
   dsb: "dsb.html"
   index: "index.html"
