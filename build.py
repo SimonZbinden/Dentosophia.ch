@@ -13,7 +13,7 @@ templates = [
     "about",
     "kontakt",
     #"philosophie",
-    #"dentosophie",
+    "dentosophie",
     #"cranio",
     #"empty_body",
     #"test",
